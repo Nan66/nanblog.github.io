@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>佛曰 on Even - A super concise theme for Hugo</title>
+    <link>http://nanblog.github.io/categories/%E4%BD%9B%E6%9B%B0/</link>
+    <description>Recent content in 佛曰 on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 12 Jan 2021 15:32:58 +0800</lastBuildDate><atom:link href="http://nanblog.github.io/categories/%E4%BD%9B%E6%9B%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>复盘</title>
+      <link>http://nanblog.github.io/post/%E4%BD%9B%E6%9B%B0/%E5%A4%8D%E7%9B%98/</link>
+      <pubDate>Tue, 12 Jan 2021 15:32:58 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/%E4%BD%9B%E6%9B%B0/%E5%A4%8D%E7%9B%98/</guid>
+      <description>每日小结 在每日规划中加一栏每日小结,做一个to do list的每日规划，除了记录事项，促进完成外，还可以记录自己的收获，发现和启发。也就是简单的</description>
+    </item>
+    
+    <item>
+      <title>健康生活</title>
+      <link>http://nanblog.github.io/post/%E4%BD%9B%E6%9B%B0/%E5%81%A5%E5%BA%B7%E7%94%9F%E6%B4%BB/</link>
+      <pubDate>Sun, 10 Jan 2021 15:03:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/%E4%BD%9B%E6%9B%B0/%E5%81%A5%E5%BA%B7%E7%94%9F%E6%B4%BB/</guid>
+      <description>饮食规律 睡眠充足：11点左右开始睡觉最好，睡眠时间8小时 多运动 保持心情舒畅，正确疏导压力与焦虑。</description>
+    </item>
+    
+    <item>
+      <title>感想</title>
+      <link>http://nanblog.github.io/post/%E4%BD%9B%E6%9B%B0/%E6%84%9F%E6%83%B3/</link>
+      <pubDate>Sun, 10 Jan 2021 15:03:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/%E4%BD%9B%E6%9B%B0/%E6%84%9F%E6%83%B3/</guid>
+      <description>2021.01.06 星期四 最近一直很迷茫，也很焦虑，对自己未来工作的方向，以后自己要成为什么样的人。现在做的事情会不会让自己以后的技术栈废掉。 而且感觉自己是一</description>
+    </item>
+    
+  </channel>
+</rss>

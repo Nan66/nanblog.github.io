@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go on Even - A super concise theme for Hugo</title>
+    <link>http://nanblog.github.io/categories/go/</link>
+    <description>Recent content in go on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 11 Jan 2021 10:14:02 +0800</lastBuildDate><atom:link href="http://nanblog.github.io/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gin处理网络请求</title>
+      <link>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/gin%E5%A4%84%E7%90%86%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/gin%E5%A4%84%E7%90%86%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/</guid>
+      <description>安装gin go get -u -v github.com/gin-gonic/gin gin的各个请求参数处理 快速开始 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 # 假设example.go 文件中包含以下代码 $ cat example.go package</description>
+    </item>
+    
+    <item>
+      <title>gin路由</title>
+      <link>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/gin%E8%B7%AF%E7%94%B1/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/gin%E8%B7%AF%E7%94%B1/</guid>
+      <description>gin.group ​ 分组路由 在我们开发定义路由的时候，可能会遇到很多部分重复的路由： 1 2 3 /admin/users /admin/manager /admin/photo 所以可以通过gin.group进行分组 问题：为什么route</description>
+    </item>
+    
+    <item>
+      <title>go_module管理</title>
+      <link>http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/go_module%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/go_module%E7%AE%A1%E7%90%86/</guid>
+      <description>Go 1.11 和 Go 1.12 包含了初步的 Go Modules 支持，且计划在 2019 年 8 月发布的 Go 1.13 会在所有开发过程中默认使用 Go Modules。 Go Modules 是为了提升使用其他开发者代码，即添</description>
+    </item>
+    
+    <item>
+      <title>goland使用</title>
+      <link>http://nanblog.github.io/post/go/goland/goland%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/goland/goland%E4%BD%BF%E7%94%A8/</guid>
+      <description>创建成功后的界面。单机坐下角的”Terminnal”可以打开终端，直接操作。单机”TODO”可以查看代码中所有被标注为//todo(TODO</description>
+    </item>
+    
+    <item>
+      <title>Golang -ldflags</title>
+      <link>http://nanblog.github.io/post/go/golang-ldflags/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/golang-ldflags/</guid>
+      <description>https://ms2008.github.io/2018/10/08/golang-build-version/</description>
+    </item>
+    
+    <item>
+      <title>go中间件</title>
+      <link>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/go%E4%B8%AD%E9%97%B4%E4%BB%B6/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/go%E4%B8%AD%E9%97%B4%E4%BB%B6/</guid>
+      <description>是什么 现代化的 Web 编程，中间件已经是必不可少的了。我们可以通过中间件的方式，验证 Auth 和身份鉴别，集中处理返回的数据等等。Gin 提供了 Middleware 的功能，并</description>
+    </item>
+    
+    <item>
+      <title>go的工作区</title>
+      <link>http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/go%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8C%BA/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/go%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8C%BA/</guid>
+      <description>GoROOT、GOPATH、GOBIN 的理解 GOROOT:Go语言安装根目录的路径，也就是GO语言的安装路径 GOPATH: 若干工作区目录的路径，即自定义</description>
+    </item>
+    
+    <item>
+      <title>go的热部署</title>
+      <link>http://nanblog.github.io/post/go/go%E7%9A%84%E7%83%AD%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/go%E7%9A%84%E7%83%AD%E9%83%A8%E7%BD%B2/</guid>
+      <description>https://juejin.cn/post/6861137667007102990#heading-19</description>
+    </item>
+    
+    <item>
+      <title>grbac学习</title>
+      <link>http://nanblog.github.io/post/go/grbac%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/grbac%E5%AD%A6%E4%B9%A0/</guid>
+      <description>安装 1 go get github.com/storyicon/grbac</description>
+    </item>
+    
+    <item>
+      <title>linux的go安装</title>
+      <link>http://nanblog.github.io/post/go/linux%E7%9A%84go%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/linux%E7%9A%84go%E5%AE%89%E8%A3%85/</guid>
+      <description>下载go wget go的官网下载链接 解压 执行tar解压到/usr/loacl目录下（官方推荐），得到go文件夹等 tar -C /usr/local -zxvf go1.11.5.linux-amd64.tar.gz 配置变量 添加/usr/lo</description>
+    </item>
+    
+    <item>
+      <title>mac的go安装</title>
+      <link>http://nanblog.github.io/post/go/mac%E7%9A%84go%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/mac%E7%9A%84go%E5%AE%89%E8%A3%85/</guid>
+      <description>官网下载 https://golang.org/dl/ 一顿继续之后，安装成功。 打开终端=》输入go/go version，如果有东西，说明安装成功 如果显示没有go命令，则需要配置环境变量</description>
+    </item>
+    
+    <item>
+      <title>make和new</title>
+      <link>http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/make%E5%92%8Cnew/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/make%E5%92%8Cnew/</guid>
+      <description>定义 ​ 都是用于内存分配 区别 分配内存的目标不同 make用于内建类型(map，slice，和channel)的内存分配 new用于各种类型的内存分</description>
+    </item>
+    
+    <item>
+      <title>map, slice,array</title>
+      <link>http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/map-slicearray/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/map-slicearray/</guid>
+      <description>Array slice 切片，是对数组的抽象 Go 数组的长度不可改变，在特定场景中这样的集合就不太适用，Go中提供了一种灵活，功能强悍的内置类型切片(&amp;ldquo;</description>
+    </item>
+    
+    <item>
+      <title>viper-go配置框架</title>
+      <link>http://nanblog.github.io/post/go/viper-go%E9%85%8D%E7%BD%AE%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/viper-go%E9%85%8D%E7%BD%AE%E6%A1%86%E6%9E%B6/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 下载 go get github.com/spf13/viper go get github.com/fsnotify/fsnotify import ( &amp;#34;fmt&amp;#34; &amp;#34;github.com/spf13/viper&amp;#34; &amp;#34;os&amp;#34; ) func main() { viper.SetConfigName(&amp;#34;config&amp;#34;) //设置配置文件的名字 viper.AddConfigPath(&amp;#34;.&amp;#34;) //添加配置文件所在的路径 viper.SetConfigType(&amp;#34;json&amp;#34;) //设</description>
+    </item>
+    
+    <item>
+      <title>xorm数据库操作</title>
+      <link>http://nanblog.github.io/post/go/xorm/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/xorm/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</guid>
+      <description>select select roleid，rolename from role 对应xorm 1 2 3 4 5 6 7 8 9 10 11 type BackRoles struct{ Roleid int `json:&amp;#34;roleid&amp;#34; xorm:&amp;#34;not null comment(&amp;#39;角色id唯一&amp;#39;) unique</description>
+    </item>
+    
+    <item>
+      <title>xorm爬坑</title>
+      <link>http://nanblog.github.io/post/go/xorm/%E7%88%AC%E5%9D%91/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/xorm/%E7%88%AC%E5%9D%91/</guid>
+      <description>insert 使用insert直接插入数据的时候，要用指针 1 2 3 4 5 6 7 8 9 //插入数据的时候是user，不是&amp;amp;user func InsertUser(user *User)(res int64,err error) { engine.Insert(user) } //如果</description>
+    </item>
+    
+    <item>
+      <title>xorm自动生成struct</title>
+      <link>http://nanblog.github.io/post/go/xorm/xorm%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90struct/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/xorm/xorm%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90struct/</guid>
+      <description>1 2 3 4 5 reverse 反转一个数据库结构，生成代码 shell 通用的数据库操作客户端，可对数据库结构和数据操作 dump Dump数据库中所有结构和数据到标准输出 source 从标注</description>
+    </item>
+    
+    <item>
+      <title>一些概念</title>
+      <link>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5/</guid>
+      <description>Gin handler func() gin.Engine gin.Context gin.Group</description>
+    </item>
+    
+    <item>
+      <title>一些需要注意的地方</title>
+      <link>http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/%E4%B8%80%E4%BA%9B%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/%E4%B8%80%E4%BA%9B%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9/</guid>
+      <description>string类型的数据，不传的时候就是&amp;quot;&amp;quot;，没有nil与&amp;quot;&amp;ldquo;的区别 int类型的数据，不传的时候默认</description>
+    </item>
+    
+    <item>
+      <title>包循环引用</title>
+      <link>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/%E5%8C%85%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/%E5%8C%85%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/</guid>
+      <description>1 2 3 4 5 package command-line-arguments imports admin/cmd/config imports admin/pkg/router/task imports admin/pkg/cas imports admin/cmd/config: import cycle not allowed 解决方案： 拆包 ​ 把循环引入的包拆分，搞一个中间包。 比如上面例子中，cas引入了config包，可以将c</description>
+    </item>
+    
+    <item>
+      <title>基本使用</title>
+      <link>http://nanblog.github.io/post/go/xorm/%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/xorm/%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+      <description>1 2 3 4 e,err := xorm.NewEngine(&amp;#34;mysql&amp;#34;,&amp;#34;root:password@tcp(host:port)/database&amp;#34;) 例子： e,err := xorm.NewEngine(&amp;#34;mysql&amp;#34;,&amp;#34;root:11223344@tcp(localhost:3306)/nan&amp;#34;)</description>
+    </item>
+    
+    <item>
+      <title>基础类型</title>
+      <link>http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/</guid>
+      <description>定义变量 使用 var 关键字是 Go 最基本的定义变量方式，与 C 语言不同的是 Go 把变量类型放在变量名后面: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 //定义一个名称为“v</description>
+    </item>
+    
+    <item>
+      <title>流程控制</title>
+      <link>http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</guid>
+      <description>for循环 for循环与range一起使用时，range返回两个数，第一个是index，第二个才是值。 1 2 3 4 5 roles := {2,5,10} //此情况role为0，</description>
+    </item>
+    
+  </channel>
+</rss>

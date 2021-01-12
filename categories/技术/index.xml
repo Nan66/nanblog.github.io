@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术 on Even - A super concise theme for Hugo</title>
+    <link>http://nanblog.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 11 Jan 2021 10:14:02 +0800</lastBuildDate><atom:link href="http://nanblog.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>supervisord托管软件</title>
+      <link>http://nanblog.github.io/post/supervisord%E6%89%98%E7%AE%A1%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/supervisord%E6%89%98%E7%AE%A1%E8%BD%AF%E4%BB%B6/</guid>
+      <description>定义 一个用python开发的进行管理软件 安装 yum install supervisord.noarch 修改配置 ​ cd /etc/supervisord.d 新建一个需要托管的文件 ​vim cloud-admin.ini 1 2 3 4 5 6 7 8 9 10 [program:kce] command = /home/web_server/files/cloud-admin --config=/home/web_server/files/admin_config.toml startsecs = 3 redirect_stderr = true stdout_logfile_maxbytes</description>
+    </item>
+    
+    <item>
+      <title>使用hugo搭建博客</title>
+      <link>http://nanblog.github.io/post/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>初衷 作为一个程序员，没有一个自己的博客感觉是不完整的。之前的读书笔记，专业知识都是通过本地笔记的方式进行记录，现在打算建立一个自己的博客来记</description>
+    </item>
+    
+  </channel>
+</rss>

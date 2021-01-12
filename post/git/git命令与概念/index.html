@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>git的命令与概念 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="G&#43;N" /><meta name="description" content="一些概念 工作区 在电脑中可以看到的目录，也就是我们编写代码后这些代码所在文件目录下。 版本库 工作区有一个隐藏目录.git，这个不算工作区，是Gi" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
+
+
+<link rel="canonical" href="http://nanblog.github.io/post/git/git%E5%91%BD%E4%BB%A4%E4%B8%8E%E6%A6%82%E5%BF%B5/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="git的命令与概念" />
+<meta property="og:description" content="一些概念 工作区 在电脑中可以看到的目录，也就是我们编写代码后这些代码所在文件目录下。 版本库 工作区有一个隐藏目录.git，这个不算工作区，是Gi" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://nanblog.github.io/post/git/git%E5%91%BD%E4%BB%A4%E4%B8%8E%E6%A6%82%E5%BF%B5/" />
+<meta property="article:published_time" content="2021-01-10T15:03:02+08:00" />
+<meta property="article:modified_time" content="2021-01-10T15:03:02+08:00" />
+<meta itemprop="name" content="git的命令与概念">
+<meta itemprop="description" content="一些概念 工作区 在电脑中可以看到的目录，也就是我们编写代码后这些代码所在文件目录下。 版本库 工作区有一个隐藏目录.git，这个不算工作区，是Gi">
+<meta itemprop="datePublished" content="2021-01-10T15:03:02+08:00" />
+<meta itemprop="dateModified" content="2021-01-10T15:03:02+08:00" />
+<meta itemprop="wordCount" content="4789">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="git的命令与概念"/>
+<meta name="twitter:description" content="一些概念 工作区 在电脑中可以看到的目录，也就是我们编写代码后这些代码所在文件目录下。 版本库 工作区有一个隐藏目录.git，这个不算工作区，是Gi"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">G&#43;N</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">G&#43;N</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">git的命令与概念</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-10 </span>
+        <div class="post-category">
+            <a href="/categories/git/"> git </a>
+            </div>
+          <span class="more-meta"> 4789 words </span>
+          <span class="more-meta"> 10 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#一些概念">一些概念</a>
+          <ul>
+            <li><a href="#工作区">工作区</a></li>
+            <li><a href="#版本库">版本库</a></li>
+            <li><a href="#分支">分支</a></li>
+            <li><a href="#font-color--yellow注font"><font color = 'yellow'>注</font></a></li>
+          </ul>
+        </li>
+        <li><a href="#取回分支更新fetch">取回分支更新（fetch）</a></li>
+        <li><a href="#分支branch">分支（branch）</a></li>
+        <li><a href="#切换分支checkout">切换分支（checkout）</a></li>
+        <li><a href="#更新本地文件pull">更新本地文件（pull）</a>
+          <ul>
+            <li><a href="#情景">情景</a></li>
+          </ul>
+        </li>
+        <li><a href="#工作区加入到暂存区add">工作区加入到暂存区（add）</a></li>
+        <li><a href="#暂存区到版本库commit">暂存区到版本库（commit）</a></li>
+        <li><a href="#修改commit注释">修改commit注释</a></li>
+        <li><a href="#推到远端push">推到远端（push）</a>
+          <ul>
+            <li><a href="#其他命令">其他命令</a></li>
+            <li><a href="#关于refsfor">关于refs/for</a></li>
+          </ul>
+        </li>
+        <li><a href="#查看当前状态">查看当前状态</a></li>
+        <li><a href="#查看不同diff">查看不同（diff）</a></li>
+        <li><a href="#查看commit的历史记录log">查看commit的历史记录（log）</a></li>
+        <li><a href="#查看执行的命令reflog">查看执行的命令（reflog）</a></li>
+        <li><a href="#版本回退reset">版本回退（reset）</a></li>
+        <li><a href="#reset-的几个参数">reset 的几个参数</a>
+          <ul>
+            <li><a href="#--mixed">&ndash;mixed</a></li>
+            <li><a href="#--soft">&ndash;soft</a></li>
+            <li><a href="#--hard">&ndash;hard</a></li>
+          </ul>
+        </li>
+        <li><a href="#撤销修改checkoutreset">撤销修改（checkout/reset）</a></li>
+        <li><a href="#还原撤销修改restore">还原、撤销修改（restore）</a>
+          <ul>
+            <li><a href="#撤销工作区修改">撤销工作区修改</a></li>
+            <li><a href="#撤销暂存区的修改将文件恢复到工作区去">撤销暂存区的修改，将文件恢复到工作区去</a></li>
+            <li><a href="#将工作区内容切换到某个版本">将工作区内容切换到某个版本</a></li>
+          </ul>
+        </li>
+        <li><a href="#修改commitrevert">修改commit（revert）</a></li>
+        <li><a href="#font-color--yellowrevertrestorereset的区别font"><font color = 'yellow'>revert、restore、reset的区别</font></a>
+          <ul>
+            <li><a href="#reset">reset</a></li>
+            <li><a href="#revert">revert</a></li>
+          </ul>
+        </li>
+        <li><a href="#将代码存入git栈中stash">将代码存入git栈中（stash）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="一些概念">一些概念</h2>
+<h3 id="工作区">工作区</h3>
+<p>在电脑中可以看到的目录，也就是我们编写代码后这些代码所在文件目录下。</p>
+<h3 id="版本库">版本库</h3>
+<p>工作区有一个隐藏目录<code>.git</code>，这个不算工作区，是Git的版本库</p>
+<p>Git的版本库中有很多东西，最重要的有两个。一个是成为<code>stage（或者叫index）的暂存区</code>，还有Git为我们自动创建的第一个分支<code>master</code>，以及指向<code>master</code>的一个指针叫<code>HEAD</code></p>
+<p><img src="/git_image/git%E5%BA%95%E5%B1%82%E5%9B%BE.png" alt="image"></p>
+<blockquote>
+<ol>
+<li>
+<p>当我们在编写代码或者修改文件时，是在工作区中进行修改的。</p>
+</li>
+<li>
+<p>然后当我们执行git add后，是将工作区的修改文件加入到暂存区中。</p>
+</li>
+<li>
+<p>然后当我们执行git commit ，是将暂存区中的所有内容提交到当前分支上。</p>
+</li>
+</ol>
+<p>因为我们创建Git版本库时，Git自动为我们创建了唯一一个<code>master</code>分支，所以，现在，<code>git commit</code>就是往<code>master</code>分支上提交更改。</p>
+</blockquote>
+<h3 id="分支">分支</h3>
+<p>每次提交，Git都会把它们串成一条时间线，这条时间线就是一个分支。在Git中，又一个主分支，叫master。HEAD严格来说不是指向提交，而是指向master，master才是指向提交的，所以HEAD指向的就是当前分支。</p>
+<blockquote>
+<p>一开始的时候，master分支是一条线，Git用master指向最新的提交，在用HEAD指向master，就能确定当前分支，以及当前分支的提交点。</p>
+<p><img src="/git_image/%E5%88%86%E6%94%AF1.png" alt="image"></p>
+<p>每次提交，master分支都会向前移动一步，这样，随着你不断提交，master分支的线也越来越长。</p>
+<p>当我们创建新的分支，例如dev时，Git新建了一个指针叫dev，指向master<code>相同的提交，再把</code>HEAD`指向dev，就表示当前分支在dev上：</p>
+<p><img src="/git_image/%E5%88%86%E6%94%AF2.png" alt="image"></p>
+<p>创建一个分支是很快的，因为只有增加一个dev指针，然后修改HEAD的指向，工作区的文件没有任何变化。</p>
+<p>不过，之后对工作区的修改和提交都是针对dev分支的了，比如新提交一次后，dev指针往前移了一步，而master指针不变。</p>
+<p><img src="/git_image/%E5%88%86%E6%94%AF3.png" alt="image"></p>
+<p><strong>这个时候如果切换分支到master（修改HEAD指针），那么所做的修改就会消失，因为修改在dev分支上，master上没有。（所以需要将dev合并到master上）</strong></p>
+<p><img src="/git_image/%E5%88%86%E6%94%AF6.png" alt="image"></p>
+<p>如果我们在dev的工作完成了，就可以把dev合并到master上。Git合并最简单的方法就是直接把master只想dev的当前提交，就完成了合并。然后可以删除dev分支（即删除dev指针）。</p>
+<p><img src="/git_image/%E5%88%86%E6%94%AF4.png" alt="image"></p>
+<p><img src="/git_image/%E5%88%86%E6%94%AF5.png" alt="image"></p>
+<h3 id="font-color--yellow注font"><font color = 'yellow'>注</font></h3>
+<p><strong>分支的切换大多是在本地版本库中的，也就是commit之后，进行分支切换等操作。当然远程也是存在分支切换的，因为本地和远程是对应的，但是本地和远程的联系是通过push来联系的，在本地的切换分支的操作是不影响远程的。</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>在远程创建一个分支mybranch后，可以在本地checkout 出这个分支，也就是在本地建了一个和远程同名的分支mybranch，然后我们在本地这个分支上进行开发，开发结束后，push到远端的mybranch上。</strong></p>
+</blockquote>
+<h2 id="取回分支更新fetch">取回分支更新（fetch）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git fetch
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="分支branch">分支（branch）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git branch -a
+
+<span class="c1"># 查看当前分支</span>
+git branch
+<span class="c1"># 删除分支</span>
+git branch -d &lt;分支名&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="切换分支checkout">切换分支（checkout）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">git checkout 分支名
+git switch 分支名
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>switch 存在的原因是checkout管理了太多指责，不好区分。又可以管理分支，又被用来恢复文件的操作。所以加了switch和restore来分别管理分支和恢复文件操作。</p>
+<p>分支管理方面，切换、创建并切换分支</p>
+<p>​	git checkout &lt;分支名&gt; 和git checkout -b &lt;分支名&gt;</p>
+<p>​	改为</p>
+<p>​	git switch &lt;分支名&gt; 和 git switch -c &lt;分支名&gt;</p>
+<p>恢复文件方面 restore</p>
+</blockquote>
+<h2 id="更新本地文件pull">更新本地文件（pull）</h2>
+<p>pull命令用于从远端获取代码并合并到本地的分支版本</p>
+<p>git pull 等价于git fetch 和 git merge FETCH_HEAD的结合版。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 与push 刚好相反，原因是pull是从远程更新到本地，push是从本地推到远程</span>
+git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<h3 id="情景">情景</h3>
+<ol>
+<li>
+<p>更新操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">git pull
+git pull origin
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>将远程主机origin的master分支拉去过来与本地的branchtest分支合并</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">git pull origin master:branchtest
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>如果远程分支是与当前分支合并，则冒号后面的部分可以省略</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 这个命令表示取回origin/master分支，再与本地的branchtest分支合并</span>
+git pull origin master
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+</blockquote>
+<h2 id="工作区加入到暂存区add">工作区加入到暂存区（add）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">git add &lt;file&gt;
+<span class="c1"># 将工作区所有文件加入到暂存区</span>
+git add .
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="暂存区到版本库commit">暂存区到版本库（commit）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">git commit -m <span class="s2">&#34;注释&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="修改commit注释">修改commit注释</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">git commit --amend
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="推到远端push">推到远端（push）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;
+<span class="c1"># 如果本地分支名和远程分支名相同，则可以省略冒号</span>
+git push &lt;远程主机名&gt; &lt;本地分支名&gt;
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<h3 id="其他命令">其他命令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 例</span>
+<span class="c1">## 本地的 master 分支推送到 origin 主机的 master 分支</span>
+git push origin master
+<span class="c1">## 等价于</span>
+git push origin master:master
+
+<span class="c1">## 如果本地版本与远程版本有差异，但又要强制推送，可以使用--force参数</span>
+git push --force origin master
+
+<span class="c1"># 省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支</span>
+git push origin :master
+<span class="c1"># 等价于</span>
+git push origin --delete master
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="关于refsfor">关于refs/for</h3>
+<blockquote>
+<ul>
+<li>
+<p>这个不是git的规则，是gerrit的规则。</p>
+</li>
+<li>
+<p>Branches, remote-tracking branches, and tags等等都是对commite的引用（reference）,引用都以 “refs/……”表示. 比如</p>
+<blockquote>
+<p>remote branch: origin/git_int(=refs/remotes/origin/git_int)</p>
+<p>local tag: v2.0(=refs/tags/v2.0)</p>
+<p>local branch: git_int(=refs/heads/git_int)…</p>
+</blockquote>
+</li>
+<li>
+<p>refs/for/mybranch 的意义在于我们提交代码到服务器之后是需要经过code review 之后才能进行merge的，而refs/heads 不需要code review</p>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>如果需要code review，直接push会报错</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">$git</span> push origin master
+<span class="c1"># 那么就会有“! [remote rejected] master -&gt; master (prohibited by Gerrit)”的错误信息</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>而这样push就没有问题</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">$git</span> push origin HEAD:refs/for/mybranch
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>这个HEAD应该只当前的版本</strong></p>
+</blockquote>
+</blockquote>
+<h2 id="查看当前状态">查看当前状态</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">git status
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="查看不同diff">查看不同（diff）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git diff
+
+//查看工作区和版本库的区别
+git diff HEAD --文件名
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="查看commit的历史记录log">查看commit的历史记录（log）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">git log
+//简略版
+git log --pretty<span class="o">=</span>oneline
+
+<span class="c1"># 例子</span>
+$ git log --pretty<span class="o">=</span>oneline
+1094adb7b9b3807259d8cb349e7df1d4d6477073 <span class="o">(</span>HEAD -&gt; master<span class="o">)</span> append GPL
+e475afc93c209a690c39c13a46716e8fa000c366 add distributed
+eaadf4e385e865d25c48e7ca9c8395c3f7dfaef0 wrote a readme file
+<span class="c1"># 前面这个就是commit的id，进行版本回退的时候需要用到这个id</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="查看执行的命令reflog">查看执行的命令（reflog）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">git reflog
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="版本回退reset">版本回退（reset）</h2>
+<blockquote>
+<p>在git中，用HEAD来表示版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^,往上100个版本就要有100个^，数不过来。所以可以写成HEAD～100</p>
+<p>Git的版本回退速度非常快，因为Git在内部有个指向当前版本的<code>HEAD</code>指针，当你回退版本的时候，Git仅仅是把HEAD从指向<code>append GPL</code></p>
+<p>commit了三个版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">┌────┐
+│HEAD│
+└────┘
+   │
+   └──&gt; ○ append GPL
+        │
+        ○ add distributed
+        │
+        ○ wrote a readme file
+</code></pre></td></tr></table>
+</div>
+</div><p>改为指向<code>add distributed</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">┌────┐
+│HEAD│
+└────┘
+   │
+   │    ○ append GPL
+   │    │
+   └──&gt; ○ add distributed
+        │
+        ○ wrote a readme file
+</code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ git reset --hard 1094a
+HEAD is now at 83b0afe append GPL
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>适用场景：比如我们git add，git commit了一个版本后，想要把这个版本撤销，可以通过这个命令。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">git reset --soft HEAD^
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="reset-的几个参数">reset 的几个参数</h2>
+<h3 id="--mixed">&ndash;mixed</h3>
+<blockquote>
+<p>不删除工作区间改动代码，撤销commit，并撤销git add操作。</p>
+<p>这个为默认参数，git reset &ndash;mixed HEAD^ 和 git reset HEAD^效果一样</p>
+</blockquote>
+<h3 id="--soft">&ndash;soft</h3>
+<blockquote>
+<p>不删除工作区间改动代码，撤销commit，不撤销git add</p>
+</blockquote>
+<h3 id="--hard">&ndash;hard</h3>
+<blockquote>
+<p>删除工作区间改动代码，撤销commit，撤销git add</p>
+<p>注意完成这个操作后，就恢复到上一次commit的状态了</p>
+</blockquote>
+</blockquote>
+<h2 id="撤销修改checkoutreset">撤销修改（checkout/reset）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">//撤销工作区的修改，add和commit后的修改
+//add和commit后的数据不能撤销
+git checkout --filename
+
+//撤销add到暂存区的修改
+git reset HEAD &lt;file&gt;
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>checkout 用作还原时，本质是用版本库和暂存库里的版本替换工作区的版本，无论工作区是更改还是删除，都可以还原。</p>
+</blockquote>
+<h2 id="还原撤销修改restore">还原、撤销修改（restore）</h2>
+<h3 id="撤销工作区修改">撤销工作区修改</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">git restore --worktree &lt;file&gt;
+<span class="c1"># 例子</span>
+git restore --worktree nan.txt
+<span class="c1"># 注</span>
+<span class="c1"># 如果暂存区有该文件的修改，恢复到和暂存区一致；如果暂存区没有该文件，会将工作区的文件恢复到和最近的提交的一致。–worktree 也可以省掉，即：git restore &lt;file&gt;</span>
+
+<span class="c1"># 撤销所有文件</span>
+git restore .
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="撤销暂存区的修改将文件恢复到工作区去">撤销暂存区的修改，将文件恢复到工作区去</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 撤销暂存区某些文件的修改</span>
+git restore --staged &lt;file&gt;
+<span class="c1"># 例</span>
+<span class="c1">## 撤销暂存取所有txt文件到工作区</span>
+git restore --staged <span class="s1">&#39;*.txt&#39;</span>
+<span class="c1">## 撤销暂存区所有文件到工作区</span>
+git restore --staged *
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="将工作区内容切换到某个版本">将工作区内容切换到某个版本</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">命令：git restore --source<span class="o">=</span>&lt;commitid&gt;
+举例：git restore --source<span class="o">=</span><span class="m">6271090</span>
+ <span class="c1"># tips：这个命令是将当前工作区的内容都恢复到了版本6271090，但是不会改变历史记录，如果有提示需要有删除的文件等，可以使用git add，然后提交生成新的提交记录，这点和revert有些类似，但是也有不同，revert可能会生成多个重做的记录，但是restore不会生成新的记录，如果有文件增删改动可能需要自己做add和commit操作。</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="修改commitrevert">修改commit（revert）</h2>
+<blockquote>
+<p>git revert -n &lt;版本号&gt; 进行要修改的commit，然后在commit新的commit</p>
+</blockquote>
+<h2 id="font-color--yellowrevertrestorereset的区别font"><font color = 'yellow'>revert、restore、reset的区别</font></h2>
+<ul>
+<li>restore是关于从索引或另一个提交<strong>还原工作树中的文件</strong>，<font color = 'yellow'>此命令不会更新你的分支（和另外两个的主要区别）</font>。该命令还可以从另一个提交中还原索引中的文件。（即这个命令主要目的是将工作区的内容还原为某一版本，对于分支是不会有改变的）</li>
+<li>revert和reset都是对改变的都是分支。commit后的版本库里的东西。</li>
+</ul>
+<blockquote>
+<h3 id="reset">reset</h3>
+<p>git reset 的作用是修改HEAD的位置，即 将HEAD指向的位置改变为之前存在的某个版本。</p>
+<p>适用场景：如果想要恢复到之前的某个提交，且那个版本之后提交的版本我们都不要了，就可以用这种方法。</p>
+<p>例如 我们要回退到版本一</p>
+<p><img src="/git_image/reset1.png" alt="img"></p>
+</blockquote>
+<blockquote>
+<h3 id="revert">revert</h3>
+<p>revert是通过新增一个版本来达到<strong>撤销</strong>某一个版本修改的目的。我们commit了三个版本（版本一、版本二、 版本三），突然发现版本二不行（如：有bug），想要撤销版本二，但又不想影响撤销版本三的提交，就可以用 git revert 命令来反做版本二，生成新的版本四，这个版本四里会保留版本三的东西，但撤销了版本二的东西。如下图所示：</p>
+<p><img src="/git_image/revert1.png" alt="image"></p>
+</blockquote>
+<h2 id="将代码存入git栈中stash">将代码存入git栈中（stash）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">//入栈
+git stash
+//出栈
+//pop会删除栈中的数据
+//apply会保存栈中的数据,可在后面加上名字指定使用哪个stash
+git stash pop
+git stash apply
+
+//打印栈中内容
+git stash list
+//清空某一个特定的stash
+git stash drop stash的名字
+//清空栈中内容
+git stash clear
+
+//查看指定stash的diff
+git stash show stash的名字
+//查看全部的diff
+git stash show -p
+</code></pre></td></tr></table>
+</div>
+</div><p>使用场景</p>
+<blockquote>
+<ol>
+<li>当我们开发过程中，开发到一半的时候，这个时候来了一个新的紧急的需求或bug，这个时候我们可以通过这个命令，将现在开发的东西放入git栈中，然后开发新的需求/解决bug，在push之后，我们在把它拿出来，继续开发</li>
+<li>当我们开发时忘记新建分支，直接在master上开发的后，这个时候新建分支切换的时候可能会因为冲突无法切换，此时可以通过stash将冲突的更改放入栈中，然后切换分支，然后再将它取出来，此时也会有冲突的文件，这个时候只需要手动修改就好了。然后将文件add到暂存区中，之后就是后续的操作了。</li>
+</ol>
+</blockquote>
+<p>原理</p>
+<blockquote>
+<p>git stash会把所有未提交的修改（包括暂存的和非暂存的：即add的和没add的更新文件，新建的文件不会存入，commit的也不会存入）都保存起来。</p>
+<p>stash是本地的，不会通过push上传到server。</p>
+<hr>
+<p>默认情况下，<code>git stash</code>会缓存下列文件：</p>
+<ul>
+<li>添加到暂存区的修改（staged changes）</li>
+<li>Git跟踪的但并未添加到暂存区的修改（unstaged changes）</li>
+</ul>
+<p>但不会缓存一下文件：</p>
+<ul>
+<li>在工作目录中新的文件（untracked files）</li>
+<li>被忽略的文件（ignored files）</li>
+</ul>
+<p><code>git stash</code>命令提供了参数用于缓存上面两种类型的文件。使用<code>-u</code>或者<code>--include-untracked</code>可以stash untracked文件。使用<code>-a</code>或者<code>--all</code>命令可以stash当前目录下的所有修改。</p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">G+N</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-01-10
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/git/git%E6%9C%AC%E5%9C%B0%E5%92%8Cserver%E7%9A%84%E5%85%B3%E7%B3%BB/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">git本地和server的关系</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/mac/mac%E7%9A%84%E5%87%A0%E4%B8%AA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB/">
+            <span class="next-text nav-default">mac的几个配置文件的区别</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://nanblog.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>G+N</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

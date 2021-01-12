@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>linux的链接 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="G&#43;N" /><meta name="description" content="linux文件系统 ​ linux文件系统 是什么 为解决文件的共享使用，Linux 系统引入了两种链接：硬链接 (hard link) 与软链接（又称符号链接，即 soft link 或 symbolic" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
+
+
+<link rel="canonical" href="http://nanblog.github.io/post/linux/linux%E7%9A%84%E9%93%BE%E6%8E%A5/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="linux的链接" />
+<meta property="og:description" content="linux文件系统 ​ linux文件系统 是什么 为解决文件的共享使用，Linux 系统引入了两种链接：硬链接 (hard link) 与软链接（又称符号链接，即 soft link 或 symbolic" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://nanblog.github.io/post/linux/linux%E7%9A%84%E9%93%BE%E6%8E%A5/" />
+<meta property="article:published_time" content="2021-01-11T10:14:02+08:00" />
+<meta property="article:modified_time" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="name" content="linux的链接">
+<meta itemprop="description" content="linux文件系统 ​ linux文件系统 是什么 为解决文件的共享使用，Linux 系统引入了两种链接：硬链接 (hard link) 与软链接（又称符号链接，即 soft link 或 symbolic">
+<meta itemprop="datePublished" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="dateModified" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="wordCount" content="2159">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="linux的链接"/>
+<meta name="twitter:description" content="linux文件系统 ​ linux文件系统 是什么 为解决文件的共享使用，Linux 系统引入了两种链接：硬链接 (hard link) 与软链接（又称符号链接，即 soft link 或 symbolic"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">G&#43;N</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">G&#43;N</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">linux的链接</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-11 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+          <span class="more-meta"> 2159 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#linux文件系统">linux文件系统</a></li>
+        <li><a href="#是什么">是什么</a></li>
+        <li><a href="#硬链接">硬链接</a></li>
+        <li><a href="#软链接">软链接</a></li>
+        <li><a href="#参考">参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="linux文件系统">linux文件系统</h2>
+<p>​	<a href="https://docs.corp.kuaishou.com/d/home/fcABnBG2VZb-fC4ABSXy_IqN2">linux文件系统</a></p>
+<h2 id="是什么">是什么</h2>
+<p>为<font color = 'red'>解决文件的共享使用</font>，Linux 系统引入了两种链接：<font color = 'red'>硬链接 (hard link) 与软链接</font>（又称符号链接，即 soft link 或 symbolic link）。链接为 Linux 系统解决了文件的共享使用，还带来了隐藏文件路径、增加权限安全及节省存储等好处。</p>
+<h2 id="硬链接">硬链接</h2>
+<p>若一个 inode 号对应多个文件名，则称这些文件为硬链接。换言之，硬链接就是同一个文件使用了多个别名（如下图，hard link 就是 file 的一个别名，他们有共同的 inode）。硬链接可由命令 link 或 ln 创建</p>
+<p><img src="/linux_image/ln1.png" alt="img">（左边是硬链接，右边是软链接）</p>
+<p>由于硬链接是有着相同 inode 号仅文件名不同的文件，因此硬链接存在以下几点特性：</p>
+<ul>
+<li>文件有相同的 inode 及 data block；</li>
+<li>只能对已存在的文件进行创建；</li>
+<li>不能交叉文件系统进行硬链接的创建；（还没懂什么意思）</li>
+<li>不能对目录进行创建，只可对文件创建；</li>
+<li>删除一个硬链接文件并不影响其他有相同 inode 号的文件。（即删除file不影响hard link）</li>
+</ul>
+<p>特性展示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># ls -li </span>
+ total <span class="m">0</span> 
+
+ // 只能对已存在的文件创建硬连接
+ <span class="c1"># link old.file hard.link </span>
+ link: cannot create link <span class="sb">`</span>hard.link<span class="s1">&#39; to `old.file&#39;</span>: No such file or directory 
+
+ <span class="c1"># echo &#34;This is an original file&#34; &gt; old.file </span>
+ <span class="c1"># cat old.file </span>
+ This is an original file 
+ <span class="c1"># stat old.file </span>
+  File: <span class="sb">`</span>old.file<span class="s1">&#39;
+</span><span class="s1">  Size: 25        	 Blocks: 8          IO Block: 4096   regular file 
+</span><span class="s1"> Device: 807h/2055d 	 Inode: 660650      Links: 2 
+</span><span class="s1"> Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root) 
+</span><span class="s1"> ... 
+</span><span class="s1"> // 文件有相同的 inode 号以及 data block 
+</span><span class="s1"> # link old.file hard.link | ls -li 
+</span><span class="s1"> total 8 
+</span><span class="s1"> 660650 -rw-r--r-- 2 root root 25 Sep  1 17:44 hard.link 
+</span><span class="s1"> 660650 -rw-r--r-- 2 root root 25 Sep  1 17:44 old.file 
+</span><span class="s1">
+</span><span class="s1"> // 不能交叉文件系统
+</span><span class="s1"> # ln /dev/input/event5 /root/bfile.txt 
+</span><span class="s1"> ln: failed to create hard link `/root/bfile.txt&#39;</span> <span class="o">=</span>&gt; <span class="sb">`</span>/dev/input/event5<span class="s1">&#39;: 
+</span><span class="s1"> Invalid cross-device link 
+</span><span class="s1">
+</span><span class="s1"> // 不能对目录进行创建硬连接
+</span><span class="s1"> # mkdir -p old.dir/test 
+</span><span class="s1"> # ln old.dir/ hardlink.dir 
+</span><span class="s1"> ln: `old.dir/&#39;</span>: hard link not allowed <span class="k">for</span> directory 
+ <span class="c1"># ls -iF </span>
+ <span class="m">660650</span> hard.link  <span class="m">657948</span> old.dir/  <span class="m">660650</span> old.file
+</code></pre></td></tr></table>
+</div>
+</div><p>文件 old.file 与 hard.link 有着相同的 inode 号：660650 及文件权限，inode 是随着文件的存在而存在，因此只有当文件存在时才可创建硬链接，<font color = 'red'>即当 inode 存在且链接计数器（link count）不为 0 时。inode 号仅在各文件系统下是唯一的，当 Linux 挂载多个文件系统后将出现 inode 号重复的现象（如 清单 5.所示，文件 t3.jpg、sync 及 123.txt 并无关联，却有着相同的 inode 号），因此硬链接创建时不可跨文件系统</font>。设备文件目录 /dev 使用的文件系统是 devtmpfs，而 /root（与根目录 / 一致）使用的是磁盘文件系统 ext4。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 使用命令 df 查看当前系统中挂载的文件系统类型、各文件系统 inode 使用情况及文件系统挂载点。</span>
+<span class="c1"># df -i --print-type </span>
+ Filesystem     Type       Inodes  IUsed    IFree IUse% Mounted on 
+ /dev/sda7      ext4      <span class="m">3147760</span> <span class="m">283483</span>  <span class="m">2864277</span>   10% / 
+ udev           devtmpfs   <span class="m">496088</span>    <span class="m">553</span>   <span class="m">495535</span>    1% /dev 
+ tmpfs          tmpfs      <span class="m">499006</span>    <span class="m">491</span>   <span class="m">498515</span>    1% /run 
+ none           tmpfs      <span class="m">499006</span>      <span class="m">3</span>   <span class="m">499003</span>    1% /run/lock 
+ none           tmpfs      <span class="m">499006</span>     <span class="m">15</span>   <span class="m">498991</span>    1% /run/shm 
+ /dev/sda6      fuseblk  <span class="m">74383900</span>   <span class="m">4786</span> <span class="m">74379114</span>    1% /media/DiskE 
+ /dev/sda8      fuseblk  <span class="m">29524592</span>  <span class="m">19939</span> <span class="m">29504653</span>    1% /media/DiskF 
+
+ <span class="c1"># find / -inum 1114 </span>
+ /media/DiskE/Pictures/t3.jpg 
+ /media/DiskF/123.txt 
+ /bin/sync
+ 
+ 
+ -------------
+<span class="c1"># 值得一提的是，Linux 系统存在 inode 号被用完但磁盘空间还有剩余的情况。</span>
+我们创建一个 5M 大小的 ext4 类型的 mo.img 文件，并将其挂载至目录 /mnt。然后我们使用一个 shell 脚本将挂载在 /mnt 下 ext4 文件系统的 indoe 耗尽（见清单 6.）。
+<span class="c1"># dd if=/dev/zero of=mo.img bs=5120k count=1 </span>
+ <span class="c1"># ls -lh mo.img </span>
+ -rw-r--r-- <span class="m">1</span> root root 5.0M Sep  <span class="m">1</span> 17:54 mo.img 
+ <span class="c1"># mkfs -t ext4  -F ./mo.img </span>
+ ... 
+ OS type: Linux 
+ Block <span class="nv">size</span><span class="o">=</span><span class="m">1024</span> <span class="o">(</span><span class="nv">log</span><span class="o">=</span>0<span class="o">)</span> 
+ Fragment <span class="nv">size</span><span class="o">=</span><span class="m">1024</span> <span class="o">(</span><span class="nv">log</span><span class="o">=</span>0<span class="o">)</span> 
+ <span class="nv">Stride</span><span class="o">=</span><span class="m">0</span> blocks, Stripe <span class="nv">width</span><span class="o">=</span><span class="m">0</span> blocks 
+ <span class="m">1280</span> inodes, <span class="m">5120</span> blocks 
+ <span class="m">256</span> blocks <span class="o">(</span>5.00%<span class="o">)</span> reserved <span class="k">for</span> the super user 
+ ... 
+ ... 
+ Writing superblocks and filesystem accounting information: <span class="k">done</span> 
+
+ <span class="c1"># mount -o loop ./mo.img /mnt </span>
+ <span class="c1"># cat /mnt/inode_test.sh </span>
+ <span class="c1">#!/bin/bash </span>
+
+ <span class="k">for</span> <span class="o">((</span><span class="nv">i</span> <span class="o">=</span> 1<span class="p">;</span> <span class="p">;</span> i++<span class="o">))</span> 
+ <span class="k">do</span> 
+    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> 
+        <span class="nb">echo</span>  <span class="s2">&#34;This is file_</span><span class="nv">$i</span><span class="s2">&#34;</span> &gt; file_<span class="nv">$i</span> 
+    <span class="k">else</span> 
+        <span class="nb">exit</span> <span class="m">0</span> 
+    <span class="k">fi</span> 
+ <span class="k">done</span> 
+
+ <span class="c1"># ./inode_test.sh </span>
+ ./inode_test.sh: line 6: file_1269: No space left on device 
+
+ <span class="c1"># df -iT /mnt/; du -sh /mnt/ </span>
+ Filesystem     Type Inodes IUsed IFree IUse% Mounted on 
+ /dev/loop0     ext4   <span class="m">1280</span>  <span class="m">1280</span>     <span class="m">0</span>  100% /mnt 
+ 1.3M 	 /mnt/
+</code></pre></td></tr></table>
+</div>
+</div><p>硬链接不能对目录创建是受限于文件系统的设计。现 Linux 文件系统中的目录均隐藏了两个个特殊的目录：当前目录（.）与父目录（..）。查看这两个特殊目录的 inode 号可知其实这两目录就是两个硬链接（注意目录 /mnt/lost+found/ 的 inode 号）。若系统允许对目录创建硬链接，则会<font color = 'red'>产生目录环</font>。</p>
+<p><font color = 'yellow'>怎么产生环，产生环了会有什么影响，死循环吗</font></p>
+<p><img src="/linux_image/ln2.png" alt="img"></p>
+<p><img src="/linux_image/ln3.png" alt="img"></p>
+<p><img src="/linux_image/ln4.png" alt="img"></p>
+<h2 id="软链接">软链接</h2>
+<p>软链接与硬链接不同，<font color = 'red'>若文件用户数据块中存放的内容是另一文件的路径名的指向</font>，则该文件就是软连接。软链接就是一个普通文件，只是数据块内容有点特殊。软链接有着自己的 inode 号以及用户数据块（见 <a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/#fig2">图 2.</a>）。因此软链接的创建与使用没有类似硬链接的诸多限制：</p>
+<ul>
+<li>软链接有自己的文件属性及权限等；</li>
+<li>可对不存在的文件或目录创建软链接；</li>
+<li>软链接可交叉文件系统；</li>
+<li>软链接可对文件或目录创建；</li>
+<li>创建软链接时，链接计数 i_nlink 不会增加；</li>
+<li>删除软链接并不影响被指向的文件，但若被指向的原文件被删除，则相关软连接被称为死链接（即 dangling link，若被指向路径文件被重新创建，死链接可恢复为正常的软链接）。</li>
+</ul>
+<p>​		<font color = 'yellow'><strong>相当于取一个别名，映射关系</strong>。</font></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 把/home/web_server/files/gengjianan链接到/media/disk1/gengjianan里</span>
+root@bjpg-rs1062.yz02:/home/web_server/files
+<span class="c1"># ln -s /media/disk1/gengjianan gengjianan</span>
+root@xxx:/home/web_server/files
+<span class="c1"># ls</span>
+gengjianan
+root@xxx:/home/web_server/files
+<span class="c1"># ll</span>
+total <span class="m">0</span>
+lrwxrwxrwx <span class="m">1</span> root root <span class="m">23</span> Dec  <span class="m">5</span> 15:10 gengjianan -&gt; /media/disk1/gengjianan
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ ln --help
+Usage: ln <span class="o">[</span>OPTION<span class="o">]</span>... <span class="o">[</span>-T<span class="o">]</span> TARGET LINK_NAME   <span class="o">(</span>1st form<span class="o">)</span>
+  or:  ln <span class="o">[</span>OPTION<span class="o">]</span>... TARGET                  <span class="o">(</span>2nd form<span class="o">)</span>
+  or:  ln <span class="o">[</span>OPTION<span class="o">]</span>... TARGET... DIRECTORY     <span class="o">(</span>3rd form<span class="o">)</span>
+  or:  ln <span class="o">[</span>OPTION<span class="o">]</span>... -t DIRECTORY TARGET...  <span class="o">(</span>4th form<span class="o">)</span>
+In the 1st form, create a link to TARGET with the name LINK_NAME.
+In the 2nd form, create a link to TARGET in the current directory.
+In the 3rd and 4th forms, create links to each TARGET in DIRECTORY.
+Create hard links by default, symbolic links with --symbolic.
+By default, each destination <span class="o">(</span>name of new link<span class="o">)</span> should not already exist.
+When creating hard links, each TARGET must exist.  Symbolic links
+can hold arbitrary text<span class="p">;</span> <span class="k">if</span> later resolved, a relative link is
+interpreted in relation to its parent directory.
+
+Mandatory arguments to long options are mandatory <span class="k">for</span> short options too.
+      --backup<span class="o">[=</span>CONTROL<span class="o">]</span>      make a backup of each existing destination file
+  -b                          like --backup but does not accept an argument
+  -d, -F, --directory         allow the superuser to attempt to hard link
+                                directories <span class="o">(</span>note: will probably fail due to
+                                system restrictions, even <span class="k">for</span> the superuser<span class="o">)</span>
+  -f, --force                 remove existing destination files
+  -i, --interactive           prompt whether to remove destinations
+  -L, --logical               dereference TARGETs that are symbolic links
+  -n, --no-dereference        treat LINK_NAME as a normal file <span class="k">if</span>
+                                it is a symbolic link to a directory
+  -P, --physical              make hard links directly to symbolic links
+  -r, --relative              create symbolic links relative to link location
+  -s, --symbolic              make symbolic links instead of hard links
+  -S, --suffix<span class="o">=</span>SUFFIX         override the usual backup suffix
+  -t, --target-directory<span class="o">=</span>DIRECTORY  specify the DIRECTORY in which to create
+                                the links
+  -T, --no-target-directory   treat LINK_NAME as a normal file always
+  -v, --verbose               print name of each linked file
+      --help     display this <span class="nb">help</span> and <span class="nb">exit</span>
+      --version  output version information and <span class="nb">exit</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>即gengjianan这个就相当于了/media/disk1/gengjianan</p>
+<p><font color = 'yellow'>(感觉有点奇怪，好像是转移的关系，需要在看一下)</font></p>
+<h2 id="参考">参考</h2>
+<p>​	http://pibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/#listing4</p>
+<p>​	https://blog.csdn.net/m290345792/article/details/78518360</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">G+N</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-01-11
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a href="https://github.com/gohugoio/hugoBasicExample" rel="noopener" target="_blank">See origin</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/linux/linux%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">linux的文件系统</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/go/mac%E7%9A%84go%E5%AE%89%E8%A3%85/">
+            <span class="next-text nav-default">mac的go安装</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://nanblog.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>G+N</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

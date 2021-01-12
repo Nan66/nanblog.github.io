@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gin on Even - A super concise theme for Hugo</title>
+    <link>http://nanblog.github.io/categories/gin/</link>
+    <description>Recent content in gin on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 11 Jan 2021 10:14:02 +0800</lastBuildDate><atom:link href="http://nanblog.github.io/categories/gin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gin处理网络请求</title>
+      <link>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/gin%E5%A4%84%E7%90%86%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/gin%E5%A4%84%E7%90%86%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/</guid>
+      <description>安装gin go get -u -v github.com/gin-gonic/gin gin的各个请求参数处理 快速开始 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 # 假设example.go 文件中包含以下代码 $ cat example.go package</description>
+    </item>
+    
+    <item>
+      <title>gin路由</title>
+      <link>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/gin%E8%B7%AF%E7%94%B1/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/gin%E8%B7%AF%E7%94%B1/</guid>
+      <description>gin.group ​ 分组路由 在我们开发定义路由的时候，可能会遇到很多部分重复的路由： 1 2 3 /admin/users /admin/manager /admin/photo 所以可以通过gin.group进行分组 问题：为什么route</description>
+    </item>
+    
+    <item>
+      <title>go中间件</title>
+      <link>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/go%E4%B8%AD%E9%97%B4%E4%BB%B6/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/go%E4%B8%AD%E9%97%B4%E4%BB%B6/</guid>
+      <description>是什么 现代化的 Web 编程，中间件已经是必不可少的了。我们可以通过中间件的方式，验证 Auth 和身份鉴别，集中处理返回的数据等等。Gin 提供了 Middleware 的功能，并</description>
+    </item>
+    
+    <item>
+      <title>一些概念</title>
+      <link>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5/</guid>
+      <description>Gin handler func() gin.Engine gin.Context gin.Group</description>
+    </item>
+    
+    <item>
+      <title>包循环引用</title>
+      <link>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/%E5%8C%85%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/%E5%8C%85%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/</guid>
+      <description>1 2 3 4 5 package command-line-arguments imports admin/cmd/config imports admin/pkg/router/task imports admin/pkg/cas imports admin/cmd/config: import cycle not allowed 解决方案： 拆包 ​ 把循环引入的包拆分，搞一个中间包。 比如上面例子中，cas引入了config包，可以将c</description>
+    </item>
+    
+  </channel>
+</rss>

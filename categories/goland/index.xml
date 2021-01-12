@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>goland on Even - A super concise theme for Hugo</title>
+    <link>http://nanblog.github.io/categories/goland/</link>
+    <description>Recent content in goland on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 11 Jan 2021 10:14:02 +0800</lastBuildDate><atom:link href="http://nanblog.github.io/categories/goland/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>goland使用</title>
+      <link>http://nanblog.github.io/post/go/goland/goland%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/goland/goland%E4%BD%BF%E7%94%A8/</guid>
+      <description>创建成功后的界面。单机坐下角的”Terminnal”可以打开终端，直接操作。单机”TODO”可以查看代码中所有被标注为//todo(TODO</description>
+    </item>
+    
+  </channel>
+</rss>

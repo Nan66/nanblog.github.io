@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>oh-my-zsh - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="G&#43;N" /><meta name="description" content="是什么 shell的类型有很多种，linux下默认的是bash，虽然bash的功能已经很强大，但对于以懒惰为美德的程序员来说，bash的提示功" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
+
+
+<link rel="canonical" href="http://nanblog.github.io/post/linux/oh-my-zsh/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="oh-my-zsh" />
+<meta property="og:description" content="是什么 shell的类型有很多种，linux下默认的是bash，虽然bash的功能已经很强大，但对于以懒惰为美德的程序员来说，bash的提示功" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://nanblog.github.io/post/linux/oh-my-zsh/" />
+<meta property="article:published_time" content="2021-01-11T10:14:02+08:00" />
+<meta property="article:modified_time" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="name" content="oh-my-zsh">
+<meta itemprop="description" content="是什么 shell的类型有很多种，linux下默认的是bash，虽然bash的功能已经很强大，但对于以懒惰为美德的程序员来说，bash的提示功">
+<meta itemprop="datePublished" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="dateModified" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="wordCount" content="3346">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="oh-my-zsh"/>
+<meta name="twitter:description" content="是什么 shell的类型有很多种，linux下默认的是bash，虽然bash的功能已经很强大，但对于以懒惰为美德的程序员来说，bash的提示功"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">G&#43;N</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">G&#43;N</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">oh-my-zsh</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-11 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+          <span class="more-meta"> 3346 words </span>
+          <span class="more-meta"> 7 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#是什么">是什么</a></li>
+        <li><a href="#zsh的一些特性">Zsh的一些特性</a></li>
+        <li><a href="#使用">使用</a></li>
+        <li><a href="#下载安装oh-my-zsh">下载安装oh-my-zsh</a></li>
+        <li><a href="#个性化配置">个性化配置</a>
+          <ul>
+            <li><a href="#主题选择">主题选择</a></li>
+          </ul>
+        </li>
+        <li><a href="#卸载oh-my-zsh">卸载oh-my-zsh</a></li>
+        <li><a href="#注">注⚠️</a></li>
+        <li><a href="#oh-my-zsh插件推荐">oh-my-zsh插件推荐</a>
+          <ul>
+            <li><a href="#zsh-autosuggestion">zsh-autosuggestion</a></li>
+            <li><a href="#语法词高亮效果">语法词高亮效果</a></li>
+            <li><a href="#autojump没使用">autojump（没使用）</a></li>
+          </ul>
+        </li>
+        <li><a href="#参考">参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="是什么">是什么</h2>
+<p>shell的类型有很多种，linux下默认的是bash，虽然bash的功能已经很强大，但对于以懒惰为美德的程序员来说，bash的提示功能不够强大，界面也不够炫，并非理想工具。</p>
+<p>而zsh的功能极其强大，只是配置过于复杂，起初只有极客才在用。后来，有个穷极无聊的程序员可能是实在看不下去广大猿友一直只能使用单调的bash, 于是他创建了一个名为oh-my-zsh的开源项目&hellip;</p>
+<p><img src="/linux_image/oh-my-zsh1.png" alt="img"></p>
+<p><a href="https://github.com/robbyrussell/oh-my-zsh">https://github.com/robbyrussell/oh-my-zsh</a></p>
+<p>自此，只需要简单的安装配置，小白程序员们都可以用上高档大气上档次，狂拽炫酷吊炸天的oh my zsh</p>
+<p>Zsh是一款强大的虚拟终端，既是一个系统的虚拟终端，也可以作为一个脚本语言的交互解析器。</p>
+<p><img src="/linux_image/oh-my-zsh2.png" alt="img"></p>
+<h2 id="zsh的一些特性">Zsh的一些特性</h2>
+<p>兼容bash，原来使用bash的兄弟切换过来毫无压力。</p>
+<p>强大的历史纪录功能，在用或者方向上键查找历史命令时，zsh支持限制查找。比如输入ls然后再按方向上键,则只会查找用过的ls命令。而此时使用则会仍然按之前的方式查找，忽略ls。</p>
+<p>多个终端会话共享历史记录。经常有多个窗口，tab，tmux的多个session，panel。这些命令历史不能共享实在是很糟糕的回忆。但是有了zsh之后，这些确实成了回忆了,所有的命令历史都可以共享。</p>
+<p>智能拼写纠正，输入gtep mactalk * -R，系统会提示：zsh: correct &lsquo;gtep&rsquo; to &lsquo;grep&rsquo; [nyae]?比妹纸贴心吧，她们向来都是让你猜的……</p>
+<p>各种补全：路径补全、命令补全，命令参数补全，插件内容补全等等。触发补全只需要按一下或两下tab键，补全项可以使用ctrl+n/p/f/b上下左右切换。比如你想杀掉java的进程，只需要输入kill java + tab键，如果只有一个java进程，zsh 会自动替换为进程的 pid，如果有多个则会出现选择项供你选择。ssh+空格+两个tab键，zsh会列出所有访问过的主机和用户名进行补全</p>
+<p>智能跳转，安装了autojump之后，zsh 会自动记录你访问过的目录，通过 j + 目录名 可以直接进行目录跳转，而且目录名支持模糊匹配和自动补全，例如你访问过hadoop-1.0.0目录，输入j hado 即可正确跳转。j –stat 可以看你的历史路径库。</p>
+<p>目录浏览和跳转：输入 d，即可列出你在这个会话里访问的目录列表，输入列表前的序号，即可直接跳转。</p>
+<p>在当前目录下输入 .. 或 … ，或直接输入当前目录名都可以跳转，你甚至不再需要输入cd命令了。</p>
+<p>通配符搜索：ls -l **/*.sh，可以递归显示当前目录下的 shell 文件，文件少时可以代替find，文件太多还是用find。</p>
+<h2 id="使用">使用</h2>
+<ol>
+<li>查看当前系统使用的shell</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nb">echo</span> <span class="nv">$SHELL</span> 
+/bin/bash
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>查看系统是否安装了zsh</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ cat /etc/shells  
+<span class="c1"># List of acceptable shells for chpass(1).</span>
+<span class="c1"># Ftpd will not allow users to connect who are not using</span>
+<span class="c1"># one of these shells.</span>
+
+/bin/bash
+/bin/csh
+/bin/dash
+/bin/ksh
+/bin/sh
+/bin/tcsh
+/bin/zsh
+</code></pre></td></tr></table>
+</div>
+</div><p>​	iterm2/mac中默认是有zsh的。</p>
+<p><font color = 'yellow'>（zsh和bash是同一个级别的东西，是shell的种类）</font></p>
+<p>如果系统中没有安装，那么需要安装一下zsh（怎么装自行百度，教程一堆）</p>
+<ol start="3">
+<li>安装zsh</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># Linux</span>
+sudo yum install zsh    <span class="o">(</span>Fedora和RedHat以及SUSE中<span class="o">)</span>或
+sudo apt-get install zsh    <span class="o">(</span>Debian系列，Ubuntu <span class="o">)</span>
+
+<span class="c1"># 安装git</span>
+sudo apt-get install git -y（ubuntu）
+或
+sudo yum install git -y（centos）
+
+<span class="c1"># macOS 系统自带了zsh, 一般不是最新版，如果需要最新版可通过Homebrew来安装(确认安装了Homebrew)</span>
+brew install zsh zsh-completions
+
+<span class="c1"># 或者也可以使用MacPorts(包管理工具)</span>
+sudo port install zsh zsh-completions
+</code></pre></td></tr></table>
+</div>
+</div><p><font color = 'yellow'>还没看懂为什么要切换到zsh</font></p>
+<p><font color = 'yellow'>原因(linux需要)	</font></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 安装 oh my zsh 之前必须安装 zsh，否则会收到如下提示：Zsh is not installed! Please install zsh first!</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>切换shell为zsh(可能linux的需要)</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">chsh -s /bin/zsh
+</code></pre></td></tr></table>
+</div>
+</div><p>报错了chsh: no changes made</p>
+<p>网上的方法是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">提示chsh:no changes made 解决办法：终端输入： 
+
+dscl . -read /Users/<span class="nv">$USER</span>/ UserShell 
+<span class="nb">exec</span> su - <span class="nv">$USER</span> 
+然后在输入密码即可.
+</code></pre></td></tr></table>
+</div>
+</div><p>没有试，因为下载安装oh-my-zsh不需要这一步</p>
+<h2 id="下载安装oh-my-zsh">下载安装oh-my-zsh</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 方法一：官网上的方法，但需要安装wget或者curl。wget，用来从指定的 URL 下载文件。curl，发出网络请求，然后得到和提取数据。</span>
+
+sh -c <span class="s2">&#34;</span><span class="k">$(</span>wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -<span class="k">)</span><span class="s2">&#34;</span>
+
+sh -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="k">)</span><span class="s2">&#34;</span>
+
+<span class="c1"># 方法二：当然也可以通过git下载 ，我觉得git最亲切 哈哈哈哈（感觉还是git好）</span>
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+<span class="c1"># 方法三(mac用这个好用一点)</span>
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh <span class="p">|</span> sh
+
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - <span class="p">|</span> sh
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/linux_image/oh-my-zsh3.png" alt="img"></p>
+<h2 id="个性化配置">个性化配置</h2>
+<h3 id="主题选择">主题选择</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 主题文件在~/.oh-my-zsh/themes中，选择自己喜欢的 </span>
+<span class="c1"># 修改主题改的是配置文件 #进入themes目录  cd ~/.oh-my-zsh/themes  </span>
+<span class="c1">#查看有几个主题  ls | wc -l  </span>
+<span class="c1">#可以看到有141个主题 </span>
+<span class="c1"># 查看当前主题： echo $ZSH_THEME </span>
+<span class="c1"># 修改 vim ~/.zshrc 大概11行改为 ZSH_THEME=&#34;ys&#34; </span>
+<span class="c1"># Oh-My-Zsh 的默认配置文件在：~/.zshrc。编辑～/.zshrc 修改主题，这里我用的是 ys 主题，更多主体看[这里](https://github.com/robbyrussell/oh-my-zsh/wiki/Themes)，直接修改即可，无需下载 </span>
+<span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">&#34;ys&#34;</span> 
+<span class="c1"># !!!! 重启终端后有效 或 使用 source ~/.zshrc 更新配置`</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 题外话，不太想显示主机名，所以直接干掉主机名</span>
+<span class="c1"># 编辑 ~/.oh-my-zsh/themes/ys.zsh-theme，最后面改成这样</span>
+<span class="nv">PROMPT</span><span class="o">=</span><span class="s2">&#34;
+</span><span class="s2">%{</span><span class="nv">$terminfo</span><span class="s2">[bold]</span><span class="nv">$fg</span><span class="s2">[blue]%}#%{</span><span class="nv">$reset_color</span><span class="s2">%} \
+</span><span class="s2">%(#,%{</span><span class="nv">$bg</span><span class="s2">[yellow]%}%{</span><span class="nv">$fg</span><span class="s2">[black]%}%n%{</span><span class="nv">$reset_color</span><span class="s2">%},%{</span><span class="nv">$fg</span><span class="s2">[cyan]%}%n) \
+</span><span class="s2">%{</span><span class="nv">$fg</span><span class="s2">[white]%}in \
+</span><span class="s2">%{</span><span class="nv">$terminfo</span><span class="s2">[bold]</span><span class="nv">$fg</span><span class="s2">[yellow]%}%~%{</span><span class="nv">$reset_color</span><span class="s2">%}\
+</span><span class="s2"></span><span class="si">${</span><span class="nv">hg_info</span><span class="si">}</span><span class="s2">\
+</span><span class="s2"></span><span class="si">${</span><span class="nv">git_info</span><span class="si">}</span><span class="s2">\
+</span><span class="s2"> \
+</span><span class="s2">%{</span><span class="nv">$fg</span><span class="s2">[white]%}[%*] </span><span class="nv">$exit_code</span><span class="s2">
+</span><span class="s2">%{</span><span class="nv">$terminfo</span><span class="s2">[bold]</span><span class="nv">$fg</span><span class="s2">[red]%}</span>$<span class="s2"> %{</span><span class="nv">$reset_color</span><span class="s2">%}&#34;</span>
+复制代码
+</code></pre></td></tr></table>
+</div>
+</div><p>主题预览</p>
+<p>​	https://www.cnblogs.com/askDing/p/6270269.html</p>
+<p>几个自己觉得好看的</p>
+<p><strong>kardan</strong></p>
+<p><img src="/linux_image/oh-my-zsh4.png" alt="img"></p>
+<p><strong>ys</strong></p>
+<p><img src="/linux_image/oh-my-zsh5.png" alt="img"></p>
+<h2 id="卸载oh-my-zsh">卸载oh-my-zsh</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">卸载 oh-my-zsh
+进入到.oh-my-zsh/tools目录
+
+<span class="nb">cd</span> .oh-my-zsh/tools
+chmod +x uninstall.sh
+./uninstall.sh
+rm -rif .zshrc
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="注">注⚠️</h2>
+<p>​	oh-my-zsh配置的是命令的颜色啥的</p>
+<p>​	iterms的主题配置的是终端的颜色啥的</p>
+<p>​	oh-my-zsh会改系统配置，如果介意建议不要使用。一般来说都是本地安装oh-my-zsh，对于公司的机器来说不要安装。</p>
+<h2 id="oh-my-zsh插件推荐">oh-my-zsh插件推荐</h2>
+<p>插件依然需要打开~/.zshrc，找到plugins=，然后在里面写需要的插件名，有些插件可能还需要安装。 !!!! 注意，只要改了此文件，重启终端后有效 或 使用 source ~/.zshrc 更新配置。</p>
+<p>插件推荐 : autojump、zsh-autosuggestion 以及 zsh-syntax-highlighting。</p>
+<h3 id="zsh-autosuggestion">zsh-autosuggestion</h3>
+<p>如图所示，输入命令时可提示自动补全（灰色部分），然后按键盘 → （！！！！上下左右的右键，不是tab键）即可补全</p>
+<p><img src="/linux_image/oh-my-zsh6.png" alt="img"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 安装</span>
+<span class="c1"># 克隆仓库到本地～/.oh-my-zsh/custom/pligins路径下</span>
+git clone git://github.com/zsh-users/zsh-autosuggestions <span class="nv">$ZSH_CUSTOM</span>/plugins/zsh-autosuggestions
+<span class="c1"># 用vim编辑.zshrc文件，找到插件设置命令，默认是plugins=（git），我们把它修改为plugins=（zsh-autosuggestions git）</span>
+
+vim ~/.zshrc
+
+<span class="c1"># 在文件里找到plugins，添加</span>
+<span class="nv">plugins</span><span class="o">=(</span>
+  autojump
+  zsh-autosuggestions
+  git
+<span class="o">)</span>
+
+<span class="nb">source</span> ~/.zshrc
+</code></pre></td></tr></table>
+</div>
+</div><p>ps: 重启时可能看不到变化，可能你的字体颜色太淡了，我们可以把它改亮一点</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">	1. <span class="nb">cd</span> ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	2. 用vim编辑zsh-autosuggestions.zsh文件，修改ZSH_AUTOSUGGESTIONS_STYLE<span class="o">=</span><span class="s1">&#39;fg=10&#39;</span>
+  fg修改的是颜色
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="语法词高亮效果">语法词高亮效果</h3>
+<p>日常用的命令会高亮显示，命令错误显示红色</p>
+<p><img src="/linux_image/oh-my-zsh7.png" alt="img"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 安装(我用的这个)</span>
+<span class="c1"># 克隆仓库到本地～/.oh-my-zsh/custom/pligins路径下</span>
+git clone git://github.com/zsh-users/zsh-syntax-highlighting <span class="nv">$ZSH_CUSTOM</span>/plugins/zsh-syntax-highlighting
+vim ~/.zshrc
+<span class="c1"># 在文件里找到plugins，添加</span>
+<span class="nv">plugins</span><span class="o">=(</span>
+  autojump
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+<span class="o">)</span>
+<span class="nb">source</span> ~/.zshrc
+
+<span class="c1"># 方法二</span>
+<span class="c1"># 使用homebrew包管理工具安装zsh-syntax-highlighting插件</span>
+brew install zsh-syntax-highlighting
+
+<span class="c1"># 配置.zshrc文件，插入一行</span>
+<span class="nb">source</span> /xxx/zsh-syntax-highlighting/zsh-syntax-highlighting.sh
+<span class="c1"># (注：/xxx/代表.zshrc配置所在路径)</span>
+
+<span class="c1"># 加载.zshrc配置</span>
+<span class="nb">source</span> ~/.zshrc
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="autojump没使用">autojump（没使用）</h3>
+<p>功能：实现目录间快速跳转，想去哪个目录直接 j + 目录名，不用在频繁的 cd 了！<a href="https://github.com/wting/autojump"> github地址</a>。</p>
+<p>history | grep &ldquo;git clone&quot;这个命令就能找到近期 clone 了哪些库，省却了写一堆代码的功夫。</p>
+<p>autojump 就是通过记录你在 history 中的行为把你访问过的文件夹路径都 cache 下来，当你输入路径名的时候会模糊匹配你之前cd过的目录路径，配合后面的自动提示插件，无敌了！！！</p>
+<p>如下图，我先cd到一些目录，然后就可以j快速切换，用jo快递在finder里打开文件夹</p>
+<p><img src="/linux_image/oh-my-zsh8.png" alt="img"></p>
+<p><img src="/linux_image/oh-my-zsh9.png" alt="img"></p>
+<p>安装步骤</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 安装步骤</span>
+
+<span class="c1"># ------ mac -------</span>
+brew install autojump
+vim ~/.zshrc
+<span class="c1"># 在文件里找到plugins，添加</span>
+<span class="nv">plugins</span><span class="o">=(</span>autojump<span class="o">)</span>
+<span class="c1"># 在文件末尾添加</span>
+<span class="o">[[</span> -s <span class="k">$(</span>brew --prefix<span class="k">)</span>/etc/profile.d/autojump.sh <span class="o">]]</span> <span class="o">&amp;&amp;</span> . <span class="k">$(</span>brew --prefix<span class="k">)</span>/etc/profile.d/autojump.sh
+<span class="nb">source</span> <span class="nv">$ZSH</span>/oh-my-zsh.sh
+<span class="c1"># 最后</span>
+<span class="nb">source</span> ~/.zshrc
+
+
+
+<span class="c1"># ------ linux -----</span>
+git clone git://github.com/joelthelion/autojump.git
+<span class="nb">cd</span> autojump
+./install.py
+vim ~/.zshrc
+<span class="c1"># 在文件里找到plugins，添加</span>
+<span class="nv">plugins</span><span class="o">=(</span>autojump<span class="o">)</span>
+<span class="c1"># 在文件末尾添加</span>
+<span class="o">[[</span> -s ~/.autojump/etc/profile.d/autojump.sh <span class="o">]]</span> <span class="o">&amp;&amp;</span> . ~/.autojump/etc/profile.d/autojump.sh
+<span class="nb">source</span> ~/.zshrc
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="参考">参考</h2>
+<p><a href="https://juejin.cn/post/6844903939121348616">https://juejin.cn/post/6844903939121348616</a></p>
+<p>​</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">G+N</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-01-11
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/mysql/%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">mysql命令汇总</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/supervisord%E6%89%98%E7%AE%A1%E8%BD%AF%E4%BB%B6/">
+            <span class="next-text nav-default">supervisord托管软件</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://nanblog.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>G+N</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

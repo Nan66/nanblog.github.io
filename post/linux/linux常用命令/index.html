@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>linux常用命令 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="G&#43;N" /><meta name="description" content="查看系统是哪个（Centos还是Ubuntu） ​ $ cat /etc/redhat-release CentOS Linux release 7.4.1708 (Core) 切换到root sudo su 切换到其他用户 ​ su XXX 回到root ​ exit 解压 filename*" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
+
+
+<link rel="canonical" href="http://nanblog.github.io/post/linux/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="linux常用命令" />
+<meta property="og:description" content="查看系统是哪个（Centos还是Ubuntu） ​ $ cat /etc/redhat-release CentOS Linux release 7.4.1708 (Core) 切换到root sudo su 切换到其他用户 ​ su XXX 回到root ​ exit 解压 filename*" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://nanblog.github.io/post/linux/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" />
+<meta property="article:published_time" content="2021-01-11T10:14:02+08:00" />
+<meta property="article:modified_time" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="name" content="linux常用命令">
+<meta itemprop="description" content="查看系统是哪个（Centos还是Ubuntu） ​ $ cat /etc/redhat-release CentOS Linux release 7.4.1708 (Core) 切换到root sudo su 切换到其他用户 ​ su XXX 回到root ​ exit 解压 filename*">
+<meta itemprop="datePublished" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="dateModified" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="wordCount" content="312">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="linux常用命令"/>
+<meta name="twitter:description" content="查看系统是哪个（Centos还是Ubuntu） ​ $ cat /etc/redhat-release CentOS Linux release 7.4.1708 (Core) 切换到root sudo su 切换到其他用户 ​ su XXX 回到root ​ exit 解压 filename*"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">G&#43;N</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">G&#43;N</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">linux常用命令</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-11 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+          <span class="more-meta"> 312 words </span>
+          <span class="more-meta"> 1 min read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#查看系统是哪个centos还是ubuntu">查看系统是哪个（Centos还是Ubuntu）</a></li>
+        <li><a href="#切换到root">切换到root</a></li>
+        <li><a href="#切换到其他用户">切换到其他用户</a></li>
+        <li><a href="#回到root">回到root</a></li>
+        <li><a href="#解压">解压</a></li>
+        <li><a href="#修改用户名">修改用户名</a></li>
+        <li><a href="#产看占有端口进程">产看占有端口进程</a></li>
+        <li><a href="#产看进程情况">产看进程情况</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="查看系统是哪个centos还是ubuntu">查看系统是哪个（Centos还是Ubuntu）</h2>
+<p>​	$ cat /etc/redhat-release</p>
+<p>CentOS Linux release 7.4.1708 (Core)</p>
+<h2 id="切换到root">切换到root</h2>
+<p>sudo su</p>
+<h2 id="切换到其他用户">切换到其他用户</h2>
+<p>​	su XXX</p>
+<h2 id="回到root">回到root</h2>
+<p>​	exit</p>
+<h2 id="解压">解压</h2>
+<p>filename**.tar.gz**的解压:</p>
+<p>tar -zxvf filename.tar.gz</p>
+<p>其中zxvf含义分别如下</p>
+<blockquote>
+<p>z: 　　g<strong>z</strong>ip  　　　　　　　   压缩格式</p>
+</blockquote>
+<blockquote>
+<p>x: 　　e<strong>x</strong>tract　　　　　　　　  解压</p>
+</blockquote>
+<blockquote>
+<p>v:　　 <strong>v</strong>erbose　　　　　　　　详细信息</p>
+</blockquote>
+<blockquote>
+<p>f: 　　<strong>f</strong>ile(file=archieve)　　　　文件</p>
+</blockquote>
+<p><a href="https://www.cnblogs.com/cursorhu/p/5891699.html">https://www.cnblogs.com/cursorhu/p/5891699.html</a></p>
+<h2 id="修改用户名">修改用户名</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ mv name newname
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="产看占有端口进程">产看占有端口进程</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">lsof -i:端口号
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="产看进程情况">产看进程情况</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ps -ef | grep 关键字
+</code></pre></td></tr></table>
+</div>
+</div><p>例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ ps -ef | grep cloud
+root     22323 18786  0 17:32 pts/1    00:00:00 grep --color=auto cloud
+web_ser+ 54612 52979  0 17:18 ?        00:00:00 /bin/bash /XXX/run.sh
+web_ser+ 54648 54612  0 17:18 ?        00:00:00 ./cloud
+
+# 注：第一个是本进程号，后面的是父进程号
+# 第一个就是ps这个命令的进程
+# 第二个是程序的进程，调用run.sh脚本
+# 在run.sh里又执行了./cloud命令，所以它又开了一个进程，所以54648的副进程是54642
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">G+N</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-01-11
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a href="https://github.com/gohugoio/hugoBasicExample" rel="noopener" target="_blank">See origin</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/mac/homebrew%E4%B8%8B%E8%BD%BD/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">homebrew下载</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/go/linux%E7%9A%84go%E5%AE%89%E8%A3%85/">
+            <span class="next-text nav-default">linux的go安装</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://nanblog.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>G+N</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

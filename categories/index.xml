@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Even - A super concise theme for Hugo</title>
+    <link>http://nanblog.github.io/categories/</link>
+    <description>Recent content in Categories on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 12 Jan 2021 15:32:58 +0800</lastBuildDate><atom:link href="http://nanblog.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>佛曰</title>
+      <link>http://nanblog.github.io/categories/%E4%BD%9B%E6%9B%B0/</link>
+      <pubDate>Tue, 12 Jan 2021 15:32:58 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/categories/%E4%BD%9B%E6%9B%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gin</title>
+      <link>http://nanblog.github.io/categories/gin/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/categories/gin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>http://nanblog.github.io/categories/go/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>goland</title>
+      <link>http://nanblog.github.io/categories/goland/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/categories/goland/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go基础</title>
+      <link>http://nanblog.github.io/categories/go%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/categories/go%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>http://nanblog.github.io/categories/linux/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mac</title>
+      <link>http://nanblog.github.io/categories/mac/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/categories/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>http://nanblog.github.io/categories/mysql/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/categories/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>http://nanblog.github.io/categories/nginx/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/categories/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>viper</title>
+      <link>http://nanblog.github.io/categories/viper/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/categories/viper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xorm</title>
+      <link>http://nanblog.github.io/categories/xorm/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/categories/xorm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>技术</title>
+      <link>http://nanblog.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/categories/%E6%8A%80%E6%9C%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>http://nanblog.github.io/categories/git/</link>
+      <pubDate>Sun, 10 Jan 2021 15:03:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/categories/git/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

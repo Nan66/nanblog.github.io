@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xorm on Even - A super concise theme for Hugo</title>
+    <link>http://nanblog.github.io/categories/xorm/</link>
+    <description>Recent content in xorm on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 11 Jan 2021 10:14:02 +0800</lastBuildDate><atom:link href="http://nanblog.github.io/categories/xorm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>xorm数据库操作</title>
+      <link>http://nanblog.github.io/post/go/xorm/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/xorm/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</guid>
+      <description>select select roleid，rolename from role 对应xorm 1 2 3 4 5 6 7 8 9 10 11 type BackRoles struct{ Roleid int `json:&amp;#34;roleid&amp;#34; xorm:&amp;#34;not null comment(&amp;#39;角色id唯一&amp;#39;) unique</description>
+    </item>
+    
+    <item>
+      <title>xorm爬坑</title>
+      <link>http://nanblog.github.io/post/go/xorm/%E7%88%AC%E5%9D%91/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/xorm/%E7%88%AC%E5%9D%91/</guid>
+      <description>insert 使用insert直接插入数据的时候，要用指针 1 2 3 4 5 6 7 8 9 //插入数据的时候是user，不是&amp;amp;user func InsertUser(user *User)(res int64,err error) { engine.Insert(user) } //如果</description>
+    </item>
+    
+    <item>
+      <title>xorm自动生成struct</title>
+      <link>http://nanblog.github.io/post/go/xorm/xorm%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90struct/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/xorm/xorm%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90struct/</guid>
+      <description>1 2 3 4 5 reverse 反转一个数据库结构，生成代码 shell 通用的数据库操作客户端，可对数据库结构和数据操作 dump Dump数据库中所有结构和数据到标准输出 source 从标注</description>
+    </item>
+    
+    <item>
+      <title>基本使用</title>
+      <link>http://nanblog.github.io/post/go/xorm/%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/xorm/%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+      <description>1 2 3 4 e,err := xorm.NewEngine(&amp;#34;mysql&amp;#34;,&amp;#34;root:password@tcp(host:port)/database&amp;#34;) 例子： e,err := xorm.NewEngine(&amp;#34;mysql&amp;#34;,&amp;#34;root:11223344@tcp(localhost:3306)/nan&amp;#34;)</description>
+    </item>
+    
+  </channel>
+</rss>

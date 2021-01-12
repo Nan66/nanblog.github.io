@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>viper on Even - A super concise theme for Hugo</title>
+    <link>http://nanblog.github.io/categories/viper/</link>
+    <description>Recent content in viper on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 11 Jan 2021 10:14:02 +0800</lastBuildDate><atom:link href="http://nanblog.github.io/categories/viper/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>viper-go配置框架</title>
+      <link>http://nanblog.github.io/post/go/viper-go%E9%85%8D%E7%BD%AE%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/go/viper-go%E9%85%8D%E7%BD%AE%E6%A1%86%E6%9E%B6/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 下载 go get github.com/spf13/viper go get github.com/fsnotify/fsnotify import ( &amp;#34;fmt&amp;#34; &amp;#34;github.com/spf13/viper&amp;#34; &amp;#34;os&amp;#34; ) func main() { viper.SetConfigName(&amp;#34;config&amp;#34;) //设置配置文件的名字 viper.AddConfigPath(&amp;#34;.&amp;#34;) //添加配置文件所在的路径 viper.SetConfigType(&amp;#34;json&amp;#34;) //设</description>
+    </item>
+    
+  </channel>
+</rss>

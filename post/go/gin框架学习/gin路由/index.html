@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>gin路由 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="G&#43;N" /><meta name="description" content="gin.group ​ 分组路由 在我们开发定义路由的时候，可能会遇到很多部分重复的路由： 1 2 3 /admin/users /admin/manager /admin/photo 所以可以通过gin.group进行分组 问题：为什么route" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
+
+
+<link rel="canonical" href="http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/gin%E8%B7%AF%E7%94%B1/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="gin路由" />
+<meta property="og:description" content="gin.group ​ 分组路由 在我们开发定义路由的时候，可能会遇到很多部分重复的路由： 1 2 3 /admin/users /admin/manager /admin/photo 所以可以通过gin.group进行分组 问题：为什么route" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/gin%E8%B7%AF%E7%94%B1/" />
+<meta property="article:published_time" content="2021-01-11T10:14:02+08:00" />
+<meta property="article:modified_time" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="name" content="gin路由">
+<meta itemprop="description" content="gin.group ​ 分组路由 在我们开发定义路由的时候，可能会遇到很多部分重复的路由： 1 2 3 /admin/users /admin/manager /admin/photo 所以可以通过gin.group进行分组 问题：为什么route">
+<meta itemprop="datePublished" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="dateModified" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="wordCount" content="889">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="gin路由"/>
+<meta name="twitter:description" content="gin.group ​ 分组路由 在我们开发定义路由的时候，可能会遇到很多部分重复的路由： 1 2 3 /admin/users /admin/manager /admin/photo 所以可以通过gin.group进行分组 问题：为什么route"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">G&#43;N</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">G&#43;N</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">gin路由</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-11 </span>
+        <div class="post-category">
+            <a href="/categories/go/"> go </a>
+            <a href="/categories/gin/"> gin </a>
+            </div>
+          <span class="more-meta"> 889 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#gingroup"><strong>gin.group</strong></a></li>
+        <li><a href="#gin的请求链"><strong>gin的请求链</strong></a></li>
+        <li><a href="#注"><strong>注⚠️</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="gingroup"><strong>gin.group</strong></h2>
+<p>​	分组路由</p>
+<p>在我们开发定义路由的时候，可能会遇到很多部分重复的路由：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">/admin/users
+/admin/manager
+/admin/photo
+</code></pre></td></tr></table>
+</div>
+</div><p>所以可以通过gin.group进行分组</p>
+<p>问题：为什么router.post(&quot;/dfsa&quot;,方法)，为什么这里调用的时候context不需要传</p>
+<blockquote>
+<p>应该是框架默认传了，就不需要手动传了，但是只能传context，不能传其他的类型，比如string啥的</p>
+</blockquote>
+<h2 id="gin的请求链"><strong>gin的请求链</strong></h2>
+<p>Gin 在接收到客户端请求时，找到相应的处理链，<strong>构造一个 Context 对象</strong>，再调用它的 Next() 方法就正式进入了请求处理的全流程。</p>
+<p>（所以不同请求有不同的context）</p>
+<p><img src="/go_image/gin_image/gin%E8%B7%AF%E7%94%B11.png" alt="img"></p>
+<p>Gin 还支持 Abort() 方法中断请求链的执行，它的原理是将 Context.index 调整到一个比较大的数字，这样 Next() 方法中的调用循环就会立即结束。需要注意的 Abort() 方法并不是通过 panic 的方式中断执行流，执行 Abort() 方法之后，当前函数内后面的代码逻辑还会继续执行。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">const abortIndex = 127
+func (c *Context) Abort() {
+	c.index = abortIndex
+}
+
+func SomePlugin(c *Context) {
+  ...
+  if condition {
+    c.Abort()
+    // continue executing
+  }
+  ...
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>如果在插件中显示调用 Next() 方法，那么它就改变了正常的顺序执行流，变成了像洋葱一样的嵌套执行流。换个角度来理解，正常的执行流就是后续的处理器是在前一个处理器的尾部执行，而嵌套执行流是让后续的处理器在前一个处理器进行到一半的时候执行，待后续处理器完成执行后，再回到前一个处理器继续往下执行。</p>
+<p><img src="/go_image/gin_image/gin%E8%B7%AF%E7%94%B12.png" alt="img"></p>
+<p>要是你学过 Python 语言，这种嵌套结构很容易让人联想到装饰器 decorator。如果所有的插件都使用嵌套执行流，那么就会变成了下面这张图</p>
+<p><img src="/go_image/gin_image/gin%E8%B7%AF%E7%94%B13.png" alt="img"></p>
+<p>RouterGroup 提供了 Use() 方法来注册插件，因为 RouterGroup 是一层套一层，不同层级的路由可能会注册不一样的插件，最终不同的路由节点挂接的处理函数链也不尽相同。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func (group *RouterGroup) Use(middleware ...HandlerFunc) IRoutes {
+	group.Handlers = append(group.Handlers, middleware...)
+	return group.returnObj()
+}
+
+// 注册 Get 请求
+func (group *RouterGroup) GET(relativePath string, handlers ...HandlerFunc) IRoutes {
+	return group.handle(&#34;GET&#34;, relativePath, handlers)
+}
+
+func (g *RouterGroup) handle(method, path string, handlers HandlersChain) IRoutes {
+ // 合并URL (RouterGroup有URL前缀)
+	absolutePath := group.calculateAbsolutePath(relativePath)
+	// 合并处理链条
+ handlers = group.combineHandlers(handlers)
+	// 注册路由树
+ group.engine.addRoute(httpMethod, absolutePath, handlers)
+	return group.returnObj()
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="注"><strong>注⚠️</strong></h2>
+<p>当我们的函数里参数是ctx *gin.context时，系统会默认认为他是一个handler func，如果我们放的是普通的参数，那么就不会认为他是一个handler func，所以这也是中间件存在的意义，以及为什么要那么写。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">G+N</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-01-11
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/gin%E5%A4%84%E7%90%86%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">gin处理网络请求</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/go_module%E7%AE%A1%E7%90%86/">
+            <span class="next-text nav-default">go_module管理</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://nanblog.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>G+N</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用hugo搭建博客 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="G&#43;N" /><meta name="description" content="初衷 作为一个程序员，没有一个自己的博客感觉是不完整的。之前的读书笔记，专业知识都是通过本地笔记的方式进行记录，现在打算建立一个自己的博客来记" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
+
+
+<link rel="canonical" href="http://nanblog.github.io/post/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="使用hugo搭建博客" />
+<meta property="og:description" content="初衷 作为一个程序员，没有一个自己的博客感觉是不完整的。之前的读书笔记，专业知识都是通过本地笔记的方式进行记录，现在打算建立一个自己的博客来记" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://nanblog.github.io/post/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" />
+<meta property="article:published_time" content="2021-01-11T10:14:02+08:00" />
+<meta property="article:modified_time" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="name" content="使用hugo搭建博客">
+<meta itemprop="description" content="初衷 作为一个程序员，没有一个自己的博客感觉是不完整的。之前的读书笔记，专业知识都是通过本地笔记的方式进行记录，现在打算建立一个自己的博客来记">
+<meta itemprop="datePublished" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="dateModified" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="wordCount" content="1626">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用hugo搭建博客"/>
+<meta name="twitter:description" content="初衷 作为一个程序员，没有一个自己的博客感觉是不完整的。之前的读书笔记，专业知识都是通过本地笔记的方式进行记录，现在打算建立一个自己的博客来记"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">G&#43;N</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">G&#43;N</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">使用hugo搭建博客</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-11 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+            </div>
+          <span class="more-meta"> 1626 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#初衷">初衷</a></li>
+        <li><a href="#为什么选择hugo">为什么选择hugo</a></li>
+        <li><a href="#mac上安装hugo">mac上安装hugo</a></li>
+        <li><a href="#初始化和配置">初始化和配置</a></li>
+        <li><a href="#运行">运行</a></li>
+        <li><a href="#目录详解">目录详解</a></li>
+        <li><a href="#使用">使用</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="初衷">初衷</h2>
+<p>作为一个程序员，没有一个自己的博客感觉是不完整的。之前的读书笔记，专业知识都是通过本地笔记的方式进行记录，现在打算建立一个自己的博客来记录自己的学习过程，同时也用来记录自己的生活。</p>
+<h2 id="为什么选择hugo">为什么选择hugo</h2>
+<p>首先Hugo使用go语言进行开发，速度更快。自己建立这个博客是想要长期维护的，所以随着后面文章越来越多，可能速度是一个比较重要的点。另外一个原因是因为自己目前正在学习go，所以觉得选择hugo来建立自己的博客还可以帮助学习go，何乐而不为呢。</p>
+<h2 id="mac上安装hugo">mac上安装hugo</h2>
+<ol>
+<li>
+<p>通过brew进行安装</p>
+<blockquote>
+<p><code>Brew</code> 是维护起来最简单轻便的方法。缺点也不严重。默认的安装包将会是 最近的发布版本，因此在下一个版本发布前，将无法提供缺陷修复的版本（除非 你使用 <code>--HEAD</code> 选项来安装）。<code>brew</code> 上的发行版可能会滞后几天，因为它需要 和其他组配合。尽管如此，如果你希望使用一个稳健、被广泛使用的源码，我还是推荐 使用 <code>brew</code>。它不仅有效，而且非常容易升级。</p>
+<ol>
+<li>
+<p>安装brew</p>
+<blockquote>
+<p>访问官网查看安装方法，也可看我的博客《homebrew下载》</p>
+</blockquote>
+</li>
+<li>
+<p>通过brew安装hugo</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ brew install hugo
+<span class="c1"># 确认brew已经更新路径来包含hugo</span>
+$ which hugo
+/usr/local/bin/hugo
+$ ls -l <span class="k">$(</span>which hugo<span class="k">)</span>
+lrwxr-xr-x  <span class="m">1</span> nan  admin  <span class="m">30</span>  <span class="m">1</span>  <span class="m">4</span> 20:24 /usr/local/bin/hugo -&gt; ../Cellar/hugo/0.79.0/bin/hugo
+$ hugo version
+Hugo Static Site Generator v0.79.0/extended darwin/amd64 BuildDate: unknown
+</code></pre></td></tr></table>
+</div>
+</div></blockquote>
+</li>
+<li>
+<p>通过tarbar进行安装</p>
+<blockquote>
+<p>下载 tarball 并安装也非常的简单。你需要有少量的命令行技能。 升级也很容易。你仅需要在新的二进制上重复相同的步骤就行。这可以赋予你一定的灵活性，在电脑上 拥有不同的版本。如果你想使用 <code>brew</code>， 那么选择使用二进制安装是个好主意。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="初始化和配置">初始化和配置</h2>
+<ol>
+<li>
+<p>在任意文件夹下创建一个名字为hugoblog的博客文件夹</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ hugo new site hugoblog 
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>生成的hugoblog文件夹中有很多自动生成的文件夹，我们通过git管理</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> hugoblog
+$ ll
+total <span class="m">8</span>
+drwxr-xr-x  <span class="m">3</span> nan  staff    96B  <span class="m">1</span>  <span class="m">4</span> 20:32 archetypes
+-rw-r--r--  <span class="m">1</span> nan  staff    82B  <span class="m">1</span>  <span class="m">4</span> 20:32 config.toml
+drwxr-xr-x  <span class="m">2</span> nan  staff    64B  <span class="m">1</span>  <span class="m">4</span> 20:32 content
+drwxr-xr-x  <span class="m">2</span> nan  staff    64B  <span class="m">1</span>  <span class="m">4</span> 20:32 data
+drwxr-xr-x  <span class="m">2</span> nan  staff    64B  <span class="m">1</span>  <span class="m">4</span> 20:32 layouts
+drwxr-xr-x  <span class="m">2</span> nan  staff    64B  <span class="m">1</span>  <span class="m">4</span> 20:32 static
+drwxr-xr-x  <span class="m">2</span> nan  staff    64B  <span class="m">1</span>  <span class="m">4</span> 20:32 themes
+   
+$ git init
+Initialized empty Git repository in /XXX/XXX
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>首次运行之前，我们还需要为hugo添加主题模版，因为默认是没有主题的。</p>
+<p>我们可以到https://themes.gohugo.io/ 这里来找到自己喜欢的主题，然后在hugoblog目录下通过git下载喜欢的主题到themes中，然后修改config.toml来应用该主题。</p>
+<ul>
+<li>这里我选择的是dream主题</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nb">cd</span> themes
+$ git clone https://github.com/g1eny0ung/hugo-theme-dream.git dream
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>修改config.toml,添加<code>theme = &quot;dream&quot;</code> and save.</li>
+</ul>
+<p>还有很多可配置的东西在等待我们探索。这里暂不多说。</p>
+</li>
+</ol>
+<h2 id="运行">运行</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ hugo server -D
+</code></pre></td></tr></table>
+</div>
+</div><p>通过localhost 3131即可查看效果</p>
+<p>初始效果</p>
+<p><img src="./image/blog1.png" alt="image"></p>
+<p>默认在文章内容里应用两个不同的分类：<em>categories</em> 和 <em>tags</em> 。</p>
+<h2 id="目录详解">目录详解</h2>
+<p>在我们安装完hugo后，在新建一个hugo site后，会自动生成几个目录。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ tree
+.
+├── archetypes
+│   └── default.md
+├── config.toml
+├── content
+├── data
+├── layouts
+├── static
+└── themes
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>config.toml是配置文件，一些配置在这里使用</p>
+<p>content里存放的是我们的.md 文件也就是文章</p>
+<p>static 里存放的是js等一些静态文件</p>
+<p>themes是我们的主题文件，默认hugo是没有主题的，所以如果我们装完hugo，没下载主题，运行后就会空白。</p>
+<p>其他目录还没有研究明白。</p>
+</blockquote>
+<h2 id="使用">使用</h2>
+<p>在我们site建好后，即可建立我们的博客了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ hugo new test/test.md
+/Users/nan/blog/nanblog/content/test/test.md created
+</code></pre></td></tr></table>
+</div>
+</div><p>这样会自动创建test目录和test.md文件。直接在相应目录下建md文件也可以。使用hugo命令不是必须的。</p>
+<p>但是相关的属性需要自己添加（title，data啥的）</p>
+<p>这里需要注意的是一定要在site目录下执行这个命令，其他目录下会报错，无法新建。看网上说要在content/post下写文章，目前感觉都可以。</p>
+<p>最后需要注意的是博客的分类什么的需要在md文件前进行标注，而不是通过配置来实现。目前的理解是这样。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-md" data-lang="md">---
+title: test
+date: 2021-01-06T10:37:00+08:00
+draft: true
+lastmod: 2021-01-06T10:37:00+08:00
+author: nan
+cover: /img/test.jpg
+images:
+  <span class="k">-</span> /img/test2.jpg
+categories:
+  <span class="k">-</span> 给自己的总结
+tags:
+  <span class="k">-</span> 生活
+  <span class="k">-</span> 年度
+---
+
+hello
+</code></pre></td></tr></table>
+</div>
+</div><p>categories 是指这篇文章所属的分类</p>
+<p>tags是它的标签</p>
+<p>draft 是否为草稿</p>
+<p>现在还不清楚如何多级分类，可能多添几个就可以了。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">G+N</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-01-11
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a href="https://github.com/gohugoio/hugoBasicExample" rel="noopener" target="_blank">See origin</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/%E4%B8%80%E4%BA%9B%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">一些需要注意的地方</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/%E5%8C%85%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/">
+            <span class="next-text nav-default">包循环引用</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://nanblog.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>G+N</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

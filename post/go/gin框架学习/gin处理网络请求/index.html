@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>gin处理网络请求 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="G&#43;N" /><meta name="description" content="安装gin go get -u -v github.com/gin-gonic/gin gin的各个请求参数处理 快速开始 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 # 假设example.go 文件中包含以下代码 $ cat example.go package" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
+
+
+<link rel="canonical" href="http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/gin%E5%A4%84%E7%90%86%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="gin处理网络请求" />
+<meta property="og:description" content="安装gin go get -u -v github.com/gin-gonic/gin gin的各个请求参数处理 快速开始 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 # 假设example.go 文件中包含以下代码 $ cat example.go package" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/gin%E5%A4%84%E7%90%86%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/" />
+<meta property="article:published_time" content="2021-01-11T10:14:02+08:00" />
+<meta property="article:modified_time" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="name" content="gin处理网络请求">
+<meta itemprop="description" content="安装gin go get -u -v github.com/gin-gonic/gin gin的各个请求参数处理 快速开始 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 # 假设example.go 文件中包含以下代码 $ cat example.go package">
+<meta itemprop="datePublished" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="dateModified" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="wordCount" content="690">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="gin处理网络请求"/>
+<meta name="twitter:description" content="安装gin go get -u -v github.com/gin-gonic/gin gin的各个请求参数处理 快速开始 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 # 假设example.go 文件中包含以下代码 $ cat example.go package"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">G&#43;N</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">G&#43;N</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">gin处理网络请求</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-11 </span>
+        <div class="post-category">
+            <a href="/categories/go/"> go </a>
+            <a href="/categories/gin/"> gin </a>
+            </div>
+          <span class="more-meta"> 690 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#安装gin">安装gin</a></li>
+        <li><a href="#gin的各个请求参数处理">gin的各个请求参数处理</a></li>
+        <li><a href="#快速开始"><strong>快速开始</strong></a>
+          <ul>
+            <li><a href="#使用-get-post-put-patch-delete-and-options"><strong>使用 GET, POST, PUT, PATCH, DELETE and OPTIONS</strong></a></li>
+            <li><a href="#路由参数后面那些"><strong>路由参数（后面那些）</strong></a></li>
+            <li><a href="#查询字符串参数后面那些"><strong>查询字符串参数（？后面那些）</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="安装gin">安装gin</h2>
+<p>go get -u -v github.com/gin-gonic/gin</p>
+<h2 id="gin的各个请求参数处理">gin的各个请求参数处理</h2>
+<h2 id="快速开始"><strong>快速开始</strong></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="err">#</span> <span class="nx">假设example</span><span class="p">.</span><span class="k">go</span> <span class="nx">文件中包含以下代码</span>
+<span class="err">$</span> <span class="nx">cat</span> <span class="nx">example</span><span class="p">.</span><span class="k">go</span>
+<span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&#34;github.com/gin-gonic/gin&#34;</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nx">r</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span><span class="c1">//初始化gin
+</span><span class="c1"></span>   <span class="c1">//get请求，参数为ping，第二个参数是响应，response
+</span><span class="c1"></span>   <span class="nx">r</span><span class="p">.</span><span class="nf">GET</span><span class="p">(</span><span class="s">&#34;/ping&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">c</span><span class="p">.</span><span class="nf">JSON</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="nx">gin</span><span class="p">.</span><span class="nx">H</span><span class="p">{</span>
+     <span class="s">&#34;message&#34;</span><span class="p">:</span> <span class="s">&#34;pong&#34;</span><span class="p">,</span>
+    <span class="p">})</span>
+   <span class="p">})</span>
+   <span class="nx">r</span><span class="p">.</span><span class="nf">Run</span><span class="p">()</span> <span class="c1">// listen and serve on 0.0.0.0:8080 (for windows &#34;localhost:8080&#34;)
+</span><span class="c1"></span><span class="p">}</span>
+<span class="err">#</span> <span class="nx">运行example</span><span class="p">.</span><span class="nx">go文件并在浏览器上访问0</span><span class="mf">.0.0.0</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="nx">ping</span><span class="err">（</span><span class="nx">windows访问</span><span class="err">：</span><span class="nx">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="nx">ping</span><span class="err">）</span>
+<span class="err">$</span> <span class="k">go</span> <span class="nx">run</span> <span class="nx">example</span><span class="p">.</span><span class="k">go</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="使用-get-post-put-patch-delete-and-options"><strong>使用 GET, POST, PUT, PATCH, DELETE and OPTIONS</strong></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">//使用默认中间件（logger 和 recovery 中间件）创建 gin 路由
+</span><span class="c1"></span>   <span class="nx">router</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
+
+   <span class="nx">router</span><span class="p">.</span><span class="nf">GET</span><span class="p">(</span><span class="s">&#34;/someGet&#34;</span><span class="p">,</span> <span class="nx">getting</span><span class="p">)</span>
+   <span class="nx">router</span><span class="p">.</span><span class="nf">POST</span><span class="p">(</span><span class="s">&#34;/somePost&#34;</span><span class="p">,</span> <span class="nx">posting</span><span class="p">)</span>
+   <span class="nx">router</span><span class="p">.</span><span class="nf">PUT</span><span class="p">(</span><span class="s">&#34;/somePut&#34;</span><span class="p">,</span> <span class="nx">putting</span><span class="p">)</span>
+   <span class="nx">router</span><span class="p">.</span><span class="nf">DELETE</span><span class="p">(</span><span class="s">&#34;/someDelete&#34;</span><span class="p">,</span> <span class="nx">deleting</span><span class="p">)</span>
+   <span class="nx">router</span><span class="p">.</span><span class="nf">PATCH</span><span class="p">(</span><span class="s">&#34;/somePatch&#34;</span><span class="p">,</span> <span class="nx">patching</span><span class="p">)</span>
+   <span class="nx">router</span><span class="p">.</span><span class="nf">HEAD</span><span class="p">(</span><span class="s">&#34;/someHead&#34;</span><span class="p">,</span> <span class="nx">head</span><span class="p">)</span>
+   <span class="nx">router</span><span class="p">.</span><span class="nf">OPTIONS</span><span class="p">(</span><span class="s">&#34;/someOptions&#34;</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span>
+
+  <span class="c1">// 默认在 8080 端口启动服务，除非定义了一个 PORT 的环境变量。.
+</span><span class="c1"></span>   <span class="nx">router</span><span class="p">.</span><span class="nf">Run</span><span class="p">()</span>
+  <span class="c1">//  router.Run(&#34;:3000&#34;) hardcode 端口号
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="路由参数后面那些"><strong>路由参数（后面那些）</strong></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nx">router</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
+
+  <span class="c1">// 这个handler 将会匹配 /user/john 但不会匹配 /user/ 或者 /user
+</span><span class="c1"></span>  <span class="c1">//即:name是必要参数，也就是一定要有name，不能没有
+</span><span class="c1"></span>   <span class="nx">router</span><span class="p">.</span><span class="nf">GET</span><span class="p">(</span><span class="s">&#34;/user/:name&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">name</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">Param</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">)</span>
+    <span class="nx">c</span><span class="p">.</span><span class="nf">String</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusOK</span><span class="p">,</span> <span class="s">&#34;Hello %s&#34;</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span>
+   <span class="p">})</span>
+
+  <span class="c1">// 但是, 这个将匹配 /user/john/ 以及 /user/john/send
+</span><span class="c1"></span>  <span class="c1">// 如果没有其他路由器匹配 /user/john, 它将重定向到 /user/john/
+</span><span class="c1"></span>  <span class="c1">//即*action是可选参数，可以没有
+</span><span class="c1"></span>   <span class="nx">router</span><span class="p">.</span><span class="nf">GET</span><span class="p">(</span><span class="s">&#34;/user/:name/*action&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">name</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">Param</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">)</span>
+    <span class="nx">action</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">Param</span><span class="p">(</span><span class="s">&#34;action&#34;</span><span class="p">)</span>
+    <span class="nx">message</span> <span class="o">:=</span> <span class="nx">name</span> <span class="o">+</span> <span class="s">&#34; is &#34;</span> <span class="o">+</span> <span class="nx">action</span>
+    <span class="nx">c</span><span class="p">.</span><span class="nf">String</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusOK</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span>
+   <span class="p">})</span>
+
+  <span class="c1">// 对于每个匹配的请求，上下文将保留路由定义
+</span><span class="c1"></span>   <span class="nx">router</span><span class="p">.</span><span class="nf">POST</span><span class="p">(</span><span class="s">&#34;/user/:name/*action&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">c</span><span class="p">.</span><span class="nf">FullPath</span><span class="p">()</span> <span class="o">==</span> <span class="s">&#34;/user/:name/*action&#34;</span> <span class="c1">// true
+</span><span class="c1"></span>   <span class="p">})</span>
+
+   <span class="nx">router</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="查询字符串参数后面那些"><strong>查询字符串参数（？后面那些）</strong></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nx">router</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
+
+  <span class="c1">// 查询字符串参数使用现有的底层 request 对象解析
+</span><span class="c1"></span>  <span class="c1">// 请求响应匹配的 URL:  /welcome?firstname=Jane&amp;lastname=Doe
+</span><span class="c1"></span>   <span class="nx">router</span><span class="p">.</span><span class="nf">GET</span><span class="p">(</span><span class="s">&#34;/welcome&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">firstname</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">DefaultQuery</span><span class="p">(</span><span class="s">&#34;firstname&#34;</span><span class="p">,</span> <span class="s">&#34;Guest&#34;</span><span class="p">)</span><span class="c1">//设置firstname的默认值
+</span><span class="c1"></span>    <span class="nx">lastname</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">Query</span><span class="p">(</span><span class="s">&#34;lastname&#34;</span><span class="p">)</span> <span class="c1">// 这个是 c.Request.URL.Query().Get(&#34;lastname&#34;) 快捷写法，lastname没有默认值
+</span><span class="c1"></span>
+    <span class="nx">c</span><span class="p">.</span><span class="nf">String</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusOK</span><span class="p">,</span> <span class="s">&#34;Hello %s %s&#34;</span><span class="p">,</span> <span class="nx">firstname</span><span class="p">,</span> <span class="nx">lastname</span><span class="p">)</span>
+   <span class="p">})</span>
+   <span class="nx">router</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">G+N</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-01-11
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/nginx%E5%AE%89%E8%A3%85/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default"></span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/gin%E8%B7%AF%E7%94%B1/">
+            <span class="next-text nav-default">gin路由</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://nanblog.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>G+N</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

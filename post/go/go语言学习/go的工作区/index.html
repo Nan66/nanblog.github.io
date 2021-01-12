@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>go的工作区 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="G&#43;N" /><meta name="description" content="GoROOT、GOPATH、GOBIN 的理解 GOROOT:Go语言安装根目录的路径，也就是GO语言的安装路径 GOPATH: 若干工作区目录的路径，即自定义" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
+
+
+<link rel="canonical" href="http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/go%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8C%BA/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="go的工作区" />
+<meta property="og:description" content="GoROOT、GOPATH、GOBIN 的理解 GOROOT:Go语言安装根目录的路径，也就是GO语言的安装路径 GOPATH: 若干工作区目录的路径，即自定义" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/go%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8C%BA/" />
+<meta property="article:published_time" content="2021-01-11T10:14:02+08:00" />
+<meta property="article:modified_time" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="name" content="go的工作区">
+<meta itemprop="description" content="GoROOT、GOPATH、GOBIN 的理解 GOROOT:Go语言安装根目录的路径，也就是GO语言的安装路径 GOPATH: 若干工作区目录的路径，即自定义">
+<meta itemprop="datePublished" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="dateModified" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="wordCount" content="1143">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="go的工作区"/>
+<meta name="twitter:description" content="GoROOT、GOPATH、GOBIN 的理解 GOROOT:Go语言安装根目录的路径，也就是GO语言的安装路径 GOPATH: 若干工作区目录的路径，即自定义"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">G&#43;N</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">G&#43;N</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">go的工作区</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-11 </span>
+        <div class="post-category">
+            <a href="/categories/go/"> go </a>
+            <a href="/categories/go%E5%9F%BA%E7%A1%80/"> go基础 </a>
+            </div>
+          <span class="more-meta"> 1143 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#gorootgopathgobin-的理解">GoROOT、GOPATH、GOBIN 的理解</a></li>
+        <li><a href="#设置gopath的意义">设置GOPATH的意义</a></li>
+        <li><a href="#什么是归档文件">什么是归档文件</a></li>
+        <li><a href="#go项目的生命周期">Go项目的生命周期</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="gorootgopathgobin-的理解">GoROOT、GOPATH、GOBIN 的理解</h2>
+<p>GOROOT:Go语言安装根目录的路径，也就是GO语言的安装路径</p>
+<p>GOPATH: 若干工作区目录的路径，即自定义的工作空间</p>
+<p>GOBIN: GO程序生成的可执行文件（executable file）的路径</p>
+<h2 id="设置gopath的意义">设置GOPATH的意义</h2>
+<p>GOPATH:Go语言的工作目录，值是一个目录的路径，也可以是多个目录的路径，每个目录都代表GO语言的一个工作区(Workspace)</p>
+<p>工作区的作用：</p>
+<ol>
+<li>放置GO语言的源码文件，</li>
+<li>安装后的归档文件（archive file， 即 .a为扩展名的文件）</li>
+<li>可执行文件（executable file）</li>
+</ol>
+<h2 id="什么是归档文件">什么是归档文件</h2>
+<p>当我们在编译时，会依赖很多库，你可以理解为.a文件就是那些库的编译中间结果，有了那些，只要你不做改动，下次编译的时候就直接拿过来了，不需要重复编译了。</p>
+<h2 id="go项目的生命周期">Go项目的生命周期</h2>
+<ol>
+<li>编码</li>
+<li>依赖管理</li>
+<li>构建</li>
+<li>测试</li>
+<li>安装</li>
+</ol>
+<p>基本围绕Gopath和工作区进行，所以，背后至少有3个点：</p>
+<ol>
+<li>
+<p>GO语言源码的组织方式</p>
+</li>
+<li>
+<ol>
+<li>
+<p>GO语言以代码包为基本单位</p>
+</li>
+<li>
+<p>一个代码包中可包含多个.go的源码文件，这些源码文件都需被声明属于同一个代码包</p>
+</li>
+<li>
+<p>代码包的名称一般会与源码文件所在的目录同名，如果不同名，则在构建、安装的过程中会以代码包名称为准</p>
+</li>
+<li>
+<p>每个代码包都会有导入路径</p>
+</li>
+<li>
+<p>工作区中，一个代码包的导入路径实际上就是src字母到该报的实际存储位置的相对路径</p>
+</li>
+<li>
+<p>总结</p>
+</li>
+<li>
+<ol>
+<li>Go语言源码的组织方式是以GOPATH、工作区、src目录和代码为主线的</li>
+<li>通常，GO语言的源码文件都需存放在GOPATH包含的某个工作区（目录）中的src目录下的某个代码包中</li>
+<li>import &ldquo;github.com/labstack/echo&rdquo; //导入代码包</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>了解源码安装后的结果</p>
+</li>
+<li>
+<ol>
+<li>
+<p>源码文件通常会被放在某个工作区的src子目录下</p>
+</li>
+<li>
+<p>归档文件（.a）就会放在工作区的pkg子目录</p>
+</li>
+<li>
+<p>可执行文件，放进工作区的bin子目录</p>
+</li>
+<li>
+<p>代码包导入路径 github.com/labstack/echo</p>
+</li>
+<li>
+<p>归档文件的相对目录与pkg目录之间还有一级目录，叫做平台相关目录</p>
+</li>
+<li>
+<ol>
+<li>平台相关目录：build（“构建”）的目标操作系统、下划线、目标计算架构的代号组成的</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>是否理解构建和安装Go程序的过程</p>
+</li>
+<li>
+<ol>
+<li>构建使用命令go build，安装使用命令go install</li>
+<li>构建和安装代码包的时候都会执行编译、打包等操作，并且，这些操作生成的任何文件都会先被保存到某个临时的目录中。</li>
+<li>构建的是库源码文件，那么操作后产生的结果文件只会存在于临时目录中。这里的构建的主要意义在于检查和验证。</li>
+<li>构建的是命令源码文件，那么操作的结果文件会被搬运到源码文件所在的目录中</li>
+<li></li>
+</ol>
+</li>
+<li>
+<p>go build的用途和用法</p>
+</li>
+<li>
+<ol>
+<li>
+<p>go build命令的时候，默认不会编译目标代码包所依赖的那些代码包</p>
+</li>
+<li>
+<p>被依赖的代码包的归档文件不存在，或者源码文件有了变化，那它还是会被编译。</p>
+</li>
+<li>
+<p>强制编译-a,目标代码包、依赖的代码包总会被编译</p>
+</li>
+<li>
+<p>如何确定哪些代码包被编译了？</p>
+</li>
+<li>
+<ol>
+<li>go build -x //具体执行了哪些操作 -n //查看不执行</li>
+<li>go build -v //go build命令编译的代码包的名称</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">G+N</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-01-11
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/go%E4%B8%AD%E9%97%B4%E4%BB%B6/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">go中间件</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/go/go%E7%9A%84%E7%83%AD%E9%83%A8%E7%BD%B2/">
+            <span class="next-text nav-default">go的热部署</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://nanblog.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>G+N</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

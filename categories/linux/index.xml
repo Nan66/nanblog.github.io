@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Even - A super concise theme for Hugo</title>
+    <link>http://nanblog.github.io/categories/linux/</link>
+    <description>Recent content in linux on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 11 Jan 2021 10:14:02 +0800</lastBuildDate><atom:link href="http://nanblog.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux常用命令</title>
+      <link>http://nanblog.github.io/post/linux/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/linux/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>查看系统是哪个（Centos还是Ubuntu） ​ $ cat /etc/redhat-release CentOS Linux release 7.4.1708 (Core) 切换到root sudo su 切换到其他用户 ​ su XXX 回到root ​ exit 解压 filename*</description>
+    </item>
+    
+    <item>
+      <title>linux的文件系统</title>
+      <link>http://nanblog.github.io/post/linux/linux%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/linux/linux%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</guid>
+      <description>linux的文件与目录 现代操作系统为解决信息能独立于进程之外被长期存储引入了文件，文件作为进程创建信息的逻辑单元可被多个进程并发使用。在 UNIX 系</description>
+    </item>
+    
+    <item>
+      <title>linux的链接</title>
+      <link>http://nanblog.github.io/post/linux/linux%E7%9A%84%E9%93%BE%E6%8E%A5/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/linux/linux%E7%9A%84%E9%93%BE%E6%8E%A5/</guid>
+      <description>linux文件系统 ​ linux文件系统 是什么 为解决文件的共享使用，Linux 系统引入了两种链接：硬链接 (hard link) 与软链接（又称符号链接，即 soft link 或 symbolic</description>
+    </item>
+    
+    <item>
+      <title>Make和Makefile</title>
+      <link>http://nanblog.github.io/post/linux/make%E5%92%8Cmakefile/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/linux/make%E5%92%8Cmakefile/</guid>
+      <description>Make执行原理 执行make命令的时候，make命令会找当前目录下的makefile/Makefile文件，然后执行. make的作用就是根据</description>
+    </item>
+    
+    <item>
+      <title>oh-my-zsh</title>
+      <link>http://nanblog.github.io/post/linux/oh-my-zsh/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/linux/oh-my-zsh/</guid>
+      <description>是什么 shell的类型有很多种，linux下默认的是bash，虽然bash的功能已经很强大，但对于以懒惰为美德的程序员来说，bash的提示功</description>
+    </item>
+    
+    <item>
+      <title>机器间互传文件</title>
+      <link>http://nanblog.github.io/post/linux/%E6%9C%BA%E5%99%A8%E9%97%B4%E4%BA%92%E4%BC%A0%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Mon, 11 Jan 2021 10:14:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/linux/%E6%9C%BA%E5%99%A8%E9%97%B4%E4%BA%92%E4%BC%A0%E6%96%87%E4%BB%B6/</guid>
+      <description>使用python -m SimpleHTTPServer实现开发机间的传递 - 要发送的执行上述命令，会进行监听 - 要接受的执行，wget 开发机名称:端</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Even - A super concise theme for Hugo</title>
+    <link>http://nanblog.github.io/categories/git/</link>
+    <description>Recent content in git on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 10 Jan 2021 15:03:02 +0800</lastBuildDate><atom:link href="http://nanblog.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git 拉取代码</title>
+      <link>http://nanblog.github.io/post/git/git-%E6%8B%89%E5%8F%96%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Sun, 10 Jan 2021 15:03:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/git/git-%E6%8B%89%E5%8F%96%E4%BB%A3%E7%A0%81/</guid>
+      <description>创建git本地仓库 1 git init 生成密钥对 ssh-keygen命令用于为ssh生成、管理和转换认证密钥，它支持RSA和DSA两种认证密钥。 该命令的选</description>
+    </item>
+    
+    <item>
+      <title>git本地和server的关系</title>
+      <link>http://nanblog.github.io/post/git/git%E6%9C%AC%E5%9C%B0%E5%92%8Cserver%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
+      <pubDate>Sun, 10 Jan 2021 15:03:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/git/git%E6%9C%AC%E5%9C%B0%E5%92%8Cserver%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
+      <description>开发流程 download server的代码后，之后开发时，在开发前都要新建一个分支，然后在分支上进行开发，开发完成后，将server的master更新到你</description>
+    </item>
+    
+    <item>
+      <title>git的命令与概念</title>
+      <link>http://nanblog.github.io/post/git/git%E5%91%BD%E4%BB%A4%E4%B8%8E%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Sun, 10 Jan 2021 15:03:02 +0800</pubDate>
+      
+      <guid>http://nanblog.github.io/post/git/git%E5%91%BD%E4%BB%A4%E4%B8%8E%E6%A6%82%E5%BF%B5/</guid>
+      <description>一些概念 工作区 在电脑中可以看到的目录，也就是我们编写代码后这些代码所在文件目录下。 版本库 工作区有一个隐藏目录.git，这个不算工作区，是Gi</description>
+    </item>
+    
+  </channel>
+</rss>

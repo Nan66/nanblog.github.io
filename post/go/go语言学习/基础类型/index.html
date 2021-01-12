@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>基础类型 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="G&#43;N" /><meta name="description" content="定义变量 使用 var 关键字是 Go 最基本的定义变量方式，与 C 语言不同的是 Go 把变量类型放在变量名后面: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 //定义一个名称为“v" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
+
+
+<link rel="canonical" href="http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="基础类型" />
+<meta property="og:description" content="定义变量 使用 var 关键字是 Go 最基本的定义变量方式，与 C 语言不同的是 Go 把变量类型放在变量名后面: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 //定义一个名称为“v" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://nanblog.github.io/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/" />
+<meta property="article:published_time" content="2021-01-11T10:14:02+08:00" />
+<meta property="article:modified_time" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="name" content="基础类型">
+<meta itemprop="description" content="定义变量 使用 var 关键字是 Go 最基本的定义变量方式，与 C 语言不同的是 Go 把变量类型放在变量名后面: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 //定义一个名称为“v">
+<meta itemprop="datePublished" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="dateModified" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="wordCount" content="2215">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="基础类型"/>
+<meta name="twitter:description" content="定义变量 使用 var 关键字是 Go 最基本的定义变量方式，与 C 语言不同的是 Go 把变量类型放在变量名后面: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 //定义一个名称为“v"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">G&#43;N</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">G&#43;N</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">基础类型</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-11 </span>
+        <div class="post-category">
+            <a href="/categories/go/"> go </a>
+            <a href="/categories/go%E5%9F%BA%E7%A1%80/"> go基础 </a>
+            </div>
+          <span class="more-meta"> 2215 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#定义变量">定义变量</a></li>
+        <li><a href="#常量">常量</a></li>
+        <li><a href="#内置基础类型">内置基础类型</a>
+          <ul>
+            <li><a href="#bool">bool</a></li>
+            <li><a href="#整型">整型</a></li>
+            <li><a href="#浮点数类型">浮点数类型</a></li>
+            <li><a href="#字符串">字符串</a></li>
+            <li><a href="#空值">空值</a></li>
+            <li><a href="#错误类型">错误类型</a></li>
+            <li><a href="#注">注⚠️</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="定义变量">定义变量</h2>
+<p>使用 var 关键字是 Go 最基本的定义变量方式，与 C 语言不同的是 Go 把变量类型放在变量名后面:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">//定义一个名称为“variableName”，类型为&#34;type&#34;的变量
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">variableName</span> <span class="kd">type</span>
+
+<span class="c1">//定义三个类型都是“type”的三个变量
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">vname1</span><span class="p">,</span> <span class="nx">vname2</span><span class="p">,</span> <span class="nx">vname3</span> <span class="kd">type</span>
+
+<span class="c1">//初始化“variableName”的变量为“value”值，类型是“type” 
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">variableName</span> <span class="kd">type</span> <span class="p">=</span> <span class="nx">value</span>
+
+<span class="cm">/*
+</span><span class="cm">定义三个类型都是&#34;type&#34;的三个变量,并且它们分别初始化相应的值
+</span><span class="cm">vname1 为 v1，vname2 为 v2，vname3 为 v3 
+</span><span class="cm">*/</span>
+<span class="kd">var</span> <span class="nx">vname1</span><span class="p">,</span> <span class="nx">vname2</span><span class="p">,</span> <span class="nx">vname3</span> <span class="kd">type</span><span class="p">=</span> <span class="nx">v1</span><span class="p">,</span> <span class="nx">v2</span><span class="p">,</span> <span class="nx">v3</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>简单写法：</p>
+<p>可以直接忽略类型声明</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="cm">/*
+</span><span class="cm">定义三个变量，它们分别初始化相应的值 vname1 为 v1，vname2 为 v2，vname3 为 v3 然后 Go 会根据其相应值的类型来帮你初始化它们
+</span><span class="cm">*/</span>
+<span class="kd">var</span> <span class="nx">vname1</span><span class="p">,</span> <span class="nx">vname2</span><span class="p">,</span> <span class="nx">vname3</span> <span class="p">=</span> <span class="nx">v1</span><span class="p">,</span> <span class="nx">v2</span><span class="p">,</span> <span class="nx">v3</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><font color = red>（为什么go可以忽略类型，自动匹配吗，go是强类型还是弱类型）</font></p>
+<p>继续简化，<font color = red>:=</font>这个符号直接取代了 var 和 type,这种形式叫做简短声明。 不过它有一个限制，那就是它只能用在函数内部;在函数外部使用则会无法编译通过，所 以一般用 var 方式来定义全局变量。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="cm">/*
+</span><span class="cm">定义三个变量，它们分别初始化相应的值 vname1 为 v1，vname2 为 v2，vname3 为 v3 编译器会根据初始化的值自动推导出相应的类型
+</span><span class="cm">*/</span>
+<span class="nx">vname1</span><span class="p">,</span> <span class="nx">vname2</span><span class="p">,</span> <span class="nx">vname3</span> <span class="o">:=</span> <span class="nx">v1</span><span class="p">,</span> <span class="nx">v2</span><span class="p">,</span> <span class="nx">v3</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>_(下划线)是个特殊的变量名，任何赋予它的值都会被丢弃。在这个例子中，我们将值 35 赋予 b，并同时丢弃 34:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">_, b := 34, 35
+</code></pre></td></tr></table>
+</div>
+</div><p><font color = 'red'>（被丢弃那它存在的意义是什么）</font>因为有些函数一定要返回，但是我们可能用不到，所以用它接收</p>
+<p>Go 对于已声明但未使用的变量会在编译阶段报错，比如下面的代码就会产生一个错误:声 明了 i 但未使用。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span> 
+	<span class="kd">var</span> <span class="nx">i</span> <span class="kt">int</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="常量">常量</h2>
+<p>所谓常量，也就是在程序编译阶段就确定下来的值，而程序在运行时则无法改变该值。在 Go 	程序中，常量可定义为数值、布尔值或字符串等类型。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">const</span> <span class="nx">constantName</span> <span class="p">=</span> <span class="nx">value</span>
+<span class="c1">//如果需要，也可以明确指定常量的类型:
+</span><span class="c1"></span><span class="kd">const</span> <span class="nx">Pi</span> <span class="kt">float32</span> <span class="p">=</span> <span class="mf">3.1415926</span>
+
+<span class="c1">//例子
+</span><span class="c1"></span><span class="kd">const</span> <span class="nx">Pi</span> <span class="p">=</span> <span class="mf">3.1415926</span>
+<span class="kd">const</span> <span class="nx">i</span> <span class="p">=</span> <span class="mi">10000</span>
+<span class="kd">const</span> <span class="nx">MaxThread</span> <span class="p">=</span> <span class="mi">10</span>
+<span class="kd">const</span> <span class="nx">prefix</span> <span class="p">=</span> <span class="s">&#34;astaxie_&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="内置基础类型">内置基础类型</h2>
+<h3 id="bool">bool</h3>
+<p>在 Go 中，布尔值的类型为 bool，值是 true 或 false，默认为 false。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+<span class="c1">//全局声明变量
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">isActive</span> <span class="kt">bool</span>
+<span class="c1">//忽略类型的声明
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">enabled</span><span class="p">,</span><span class="nx">disabled</span> <span class="p">=</span> <span class="kc">true</span><span class="p">,</span><span class="kc">false</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">(){</span>
+	<span class="kd">var</span> <span class="nx">available</span> <span class="kt">bool</span> <span class="c1">//
+</span><span class="c1"></span>	<span class="nx">valid</span> <span class="o">:=</span> <span class="kc">false</span>
+	<span class="nx">available</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">available</span><span class="p">,</span><span class="nx">valid</span><span class="p">)</span>
+
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="整型">整型</h3>
+<p>整数类型有无符号和带符号两种。Go 同时支持 int 和 uint，这两种类型的长度相同，但具体 长度取决于不同编译器的实现。当前的 gcc 和 gccgo 编译器在 32 位和 64 位平台上都使用 32 位来表示 int 和 uint，但未来在 64 位平台上可能增加到 64 位。Go 里面也有直接定义好位数的类型:rune, int8, int16, int32, int64 和 byte, uint8, uint16, uint32, uint64。其中 rune 是 int32 的别称，byte 是 uint8 的别称。</p>
+<p>需要注意的一点是，这些类型的变量之间不允许互相赋值或操作，不然会在编译时引起编 译器报错。</p>
+<p>如下的代码会产生错误</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">a</span> <span class="kt">int8</span> 
+<span class="kd">var</span> <span class="nx">b</span> <span class="kt">int32</span> 
+<span class="nx">c</span><span class="o">:=</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+<span class="c1">//另外，尽管 int 的长度是 32 bit, 但 int 与 int32 并不可以互用。
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="浮点数类型">浮点数类型</h3>
+<p>浮点数的类型有 float32 和 float64 两种(没有 float 类型)，默认是 float64。</p>
+<p>这就是全部吗?No!Go 还支持复数。它的默认类型是 complex128(64 位实数+64 位虚 数)。如果需要小一些的，也有 complex64(32 位实数+32 位虚数)。复数的形式为 RE + IMi，其中 RE 是实数部分，IM 是虚数部分，而最后的 i 是虚数单位。下面是一个使用复数的 例子:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">c</span> <span class="kt">complex64</span> <span class="p">=</span> <span class="mi">5</span><span class="o">+</span><span class="m">5i</span>
+<span class="c1">//output: (5+5i)
+</span><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Value is: %v&#34;</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="字符串">字符串</h3>
+<ul>
+<li>默认值是空字符串 &ldquo;&quot;。</li>
+<li>⽤用索引号访问某字节，如 s[i]。</li>
+<li>不能⽤用序号获取字节元素指针，&amp;s[i] ⾮非法。 • 不可变类型，⽆无法修改字节数组。</li>
+<li>字节数组尾部不包含 NULL。</li>
+</ul>
+<p>Go 中的字符串都是采用 UTF-8 字符集编码。字符串是用一对双引号</p>
+<p>(&quot;&quot;)或反引号(<code> </code>)括起来定义，它的类型是 string。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="o">/</span><span class="nx">示例代码</span>
+<span class="kd">var</span> <span class="nx">frenchHello</span> <span class="kt">string</span> <span class="c1">// 声明变量为字符串的一般方法
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">emptyString</span> <span class="kt">string</span> <span class="p">=</span> <span class="s">&#34;&#34;</span> <span class="c1">// 声明了一个字符串变量，初始化为空字符串 func test() {
+</span><span class="c1"></span><span class="nx">no</span><span class="p">,</span> <span class="nx">yes</span><span class="p">,</span> <span class="nx">maybe</span> <span class="o">:=</span> <span class="s">&#34;no&#34;</span><span class="p">,</span> <span class="s">&#34;yes&#34;</span><span class="p">,</span> <span class="s">&#34;maybe&#34;</span> <span class="c1">// 简短声明，同时声明多个变量 japaneseHello := &#34;Ohaiou&#34; // 同上
+</span><span class="c1"></span><span class="nx">frenchHello</span> <span class="p">=</span> <span class="s">&#34;Bonjour&#34;</span> <span class="c1">// 常规赋值
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Go中，字符串是不可变的（原因应该是和java一样，更安全）</p>
+<p>例如：下面的代码编译时会报错</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">s</span> <span class="kt">string</span> <span class="p">=</span> <span class="s">&#34;hello&#34;</span> 
+<span class="nx">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="sc">&#39;c&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>但如果真的想要修改怎么办呢?下面的代码可以实现:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">s</span> <span class="o">:=</span> <span class="s">&#34;hello&#34;</span>
+<span class="nx">c</span> <span class="o">:=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="c1">// 将字符串 s 转换为 []byte 类型 
+</span><span class="c1"></span><span class="nx">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="sc">&#39;c&#39;</span>
+<span class="nx">s2</span> <span class="o">:=</span> <span class="nb">string</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="c1">// 再转换回 string 类型
+</span><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%s\n&#34;</span><span class="p">,</span> <span class="nx">s2</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Go中可以使用+操作符来连接两个字符串</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">s</span> <span class="o">:=</span> <span class="s">&#34;hello,&#34;</span>
+<span class="nx">m</span> <span class="o">:=</span> <span class="s">&#34; world&#34;</span> 
+<span class="nx">a</span> <span class="o">:=</span> <span class="nx">s</span> <span class="o">+</span> <span class="nx">m</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%s\n&#34;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>修改字符串也可以写为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">s</span> <span class="o">:=</span> <span class="s">&#34;hello&#34;</span>
+<span class="nx">s</span> <span class="p">=</span> <span class="s">&#34;c&#34;</span> <span class="o">+</span> <span class="nx">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="c1">// 字符串虽不能更改，但可进行切片操作
+</span><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%s\n&#34;</span><span class="p">,</span> <span class="nx">s</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>啥是切片操作</p>
+<p>如果要声明一个多行的字符串怎么办?可以通过 ` 来声明:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">m</span> <span class="o">:=</span> <span class="s">`hello
+</span><span class="s">  world`</span>
+  
+ <span class="err">`</span> <span class="nx">括起的字符串为</span> <span class="nx">Raw</span> <span class="nx">字符串</span><span class="err">，</span><span class="nx">即字符串在代码中的形式就是打印时的形式</span><span class="err">，</span><span class="nx">它没有字符</span> <span class="nx">转义</span><span class="err">，</span><span class="nx">换行也将原样输出</span><span class="err">。</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="空值">空值</h3>
+<p>​	用nil来表示，没有null</p>
+<h3 id="错误类型">错误类型</h3>
+<p>Go 内置有一个 error 类型，专门用来处理错误信息，Go 的 package 里面还专门有一个包</p>
+<p>errors 来处理错误:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">err</span> <span class="o">:=</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;emit macho dwarf: elf header corrupted&#34;</span><span class="p">)</span>
+<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span> 
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Go语言中不支持隐式类型转换，由窄转宽也不可以。</p>
+<p>不能将其他类型当作bool类型来使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">a</span> <span class="o">:=</span> <span class="mi">100</span>
+<span class="k">if</span> <span class="nx">a</span> <span class="p">{</span> <span class="c1">// Error: non-bool a (type int) used as if condition
+</span><span class="c1"></span>    <span class="nb">println</span><span class="p">(</span><span class="s">&#34;true&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="注">注⚠️</h3>
+<p>​	GO语言中的变量要被使用到，不能存在没使用到的类型，如果有，会报错。</p>
+<p>​	import的包同样的道理，也要使用到。</p>
+<p>总而言之，就是不能存在没有用的东西，目的可能是为了防止代码冗余（比如定义了一些没有用到的变量，浪费地方，观赏性差）</p>
+<p><img src="/go_image/go_language_image/%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B1.png" alt="img"></p>
+<p>这里的使用是要用到，比如定义一个变量a，然后把它打印，这种情况就是使用到了。</p>
+<p>而像对a赋值这种操作并不是使用到了a。</p>
+<p>目前还不清楚具体使用都包含哪些</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">G+N</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-01-11
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/go/xorm/%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">基本使用</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/linux/%E6%9C%BA%E5%99%A8%E9%97%B4%E4%BA%92%E4%BC%A0%E6%96%87%E4%BB%B6/">
+            <span class="next-text nav-default">机器间互传文件</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://nanblog.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>G+N</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>go中间件 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="G&#43;N" /><meta name="description" content="是什么 现代化的 Web 编程，中间件已经是必不可少的了。我们可以通过中间件的方式，验证 Auth 和身份鉴别，集中处理返回的数据等等。Gin 提供了 Middleware 的功能，并" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
+
+
+<link rel="canonical" href="http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/go%E4%B8%AD%E9%97%B4%E4%BB%B6/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="go中间件" />
+<meta property="og:description" content="是什么 现代化的 Web 编程，中间件已经是必不可少的了。我们可以通过中间件的方式，验证 Auth 和身份鉴别，集中处理返回的数据等等。Gin 提供了 Middleware 的功能，并" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://nanblog.github.io/post/go/gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/go%E4%B8%AD%E9%97%B4%E4%BB%B6/" />
+<meta property="article:published_time" content="2021-01-11T10:14:02+08:00" />
+<meta property="article:modified_time" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="name" content="go中间件">
+<meta itemprop="description" content="是什么 现代化的 Web 编程，中间件已经是必不可少的了。我们可以通过中间件的方式，验证 Auth 和身份鉴别，集中处理返回的数据等等。Gin 提供了 Middleware 的功能，并">
+<meta itemprop="datePublished" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="dateModified" content="2021-01-11T10:14:02+08:00" />
+<meta itemprop="wordCount" content="1033">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="go中间件"/>
+<meta name="twitter:description" content="是什么 现代化的 Web 编程，中间件已经是必不可少的了。我们可以通过中间件的方式，验证 Auth 和身份鉴别，集中处理返回的数据等等。Gin 提供了 Middleware 的功能，并"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">G&#43;N</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">G&#43;N</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">go中间件</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-11 </span>
+        <div class="post-category">
+            <a href="/categories/go/"> go </a>
+            <a href="/categories/gin/"> gin </a>
+            </div>
+          <span class="more-meta"> 1033 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#是什么">是什么</a></li>
+        <li><a href="#存在的意义">存在的意义</a></li>
+        <li><a href="#例子">例子</a>
+          <ul>
+            <li><a href="#单个路由中间件">单个路由中间件</a></li>
+            <li><a href="#执行流程控制">执行流程控制</a></li>
+            <li><a href="#路由组使用中间件">路由组使用中间件</a></li>
+          </ul>
+        </li>
+        <li><a href="#注">注⚠️</a></li>
+        <li><a href="#参考">参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="是什么">是什么</h2>
+<p>现代化的 Web 编程，中间件已经是必不可少的了。我们可以通过中间件的方式，验证 Auth 和身份鉴别，集中处理返回的数据等等。Gin 提供了 Middleware 的功能，并与路由紧紧相连。</p>
+<p>通过一个或多个函数对handler进行包装，返回一个包括了各个中间件逻辑的函数链。</p>
+<h2 id="存在的意义">存在的意义</h2>
+<p>将非业务代码与业务代码抽离出来，封装成中间件。</p>
+<p>中间件就是一个封装了公共代码的函数，然后一层一层的调用。这个和我们以前理解的中间件（redis啥的）不大一样（感觉）。</p>
+<p>和handler类似，但是多了一个c.next()，这个就是他个关键。</p>
+<h2 id="例子">例子</h2>
+<h3 id="单个路由中间件">单个路由中间件</h3>
+<p>单个路由使用中间件，只需要在注册路由的时候指定要执行的中间件即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 省略的代码 ...
+</span><span class="c1"></span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nx">router</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
+
+   <span class="c1">// 注册一个路由，使用了 middleware1，middleware2 两个中间件
+</span><span class="c1"></span>   <span class="nx">router</span><span class="p">.</span><span class="nf">GET</span><span class="p">(</span><span class="s">&#34;/someGet&#34;</span><span class="p">,</span> <span class="nx">middleware1</span><span class="p">,</span> <span class="nx">middleware2</span><span class="p">,</span> <span class="nx">handler</span><span class="p">)</span>
+  
+   <span class="c1">// 默认绑定 :8080
+</span><span class="c1"></span>   <span class="nx">router</span><span class="p">.</span><span class="nf">Run</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">handler</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;exec handler&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// 省略的代码 ...
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="执行流程控制">执行流程控制</h3>
+<p>用上面的实例代码，我们来看一下中间件是怎么执行的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 省略的代码 ...
+</span><span class="c1"></span>
+<span class="kd">func</span> <span class="nf">middleware1</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;exec middleware1&#34;</span><span class="p">)</span>
+  
+   <span class="o">*</span><span class="c1">//你可以写一些逻辑代码*
+</span><span class="c1"></span>  
+   <span class="o">*</span><span class="c1">// 执行该中间件之后的逻辑*
+</span><span class="c1"></span>   <span class="nx">c</span><span class="p">.</span><span class="nf">Next</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="c1">// 省略的代码 ...
+</span></code></pre></td></tr></table>
+</div>
+</div><p>可以看出，中间件的写法和路由的 Handler 几乎是一样的，只是多调用 c.Next()。</p>
+<p>正是有个c.Next()，我们可以在中间件中控制调用逻辑的变化，看下面的 middleware2 代码。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 省略的代码 ...
+</span><span class="c1"></span>
+<span class="kd">func</span> <span class="nf">middleware2</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;arrive at middleware2&#34;</span><span class="p">)</span>
+   <span class="o">*</span><span class="c1">// 执行该中间件之前，先跳到流程的下一个方法*
+</span><span class="c1"></span>   <span class="nx">c</span><span class="p">.</span><span class="nf">Next</span><span class="p">()</span>
+   <span class="o">*</span><span class="c1">// 流程中的其他逻辑已经执行完了*
+</span><span class="c1"></span>   <span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;exec middleware2&#34;</span><span class="p">)</span>
+  
+   <span class="o">*</span><span class="c1">//你可以写一些逻辑代码*
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="c1">// 省略的代码 ...
+</span></code></pre></td></tr></table>
+</div>
+</div><p>在 middleware2中，执行到 c.Next()时，Gin 会直接跳到流程的下一个方法中，等到这个方法执行完后，才会回来接着执行 middleware2 剩下的代码。</p>
+<p>所以请求上面注册的路由 url /someGet ，请求先到达middleware1，然后到达 middleware2，但此时 middleware2调用了 c.Next()，所以 middleware2的代码并没有执行，而是跳到了 handler ，等 handler执行完成后，跳回到 middleware2，执行 middleware2剩下的代码。</p>
+<p>所以我们可以在控制台上看到以下日志输出:</p>
+<p>exec middleware1
+arrive at middleware2
+exec handler
+exec middleware2</p>
+<h3 id="路由组使用中间件">路由组使用中间件</h3>
+<p>路由组使用中间件和单个路由类似，只不过是要把中间件放到 Group 上.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 省略的代码 ...
+</span><span class="c1"></span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nx">router</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
+
+   <span class="c1">// 定义一个组前缀, 并使用 middleware1 中间件*
+</span><span class="c1"></span>  <span class="c1">// 访问 /v2/login 就会执行 middleware1 函数*
+</span><span class="c1"></span>   <span class="nx">v2</span> <span class="o">:=</span> <span class="nx">router</span><span class="p">.</span><span class="nf">Group</span><span class="p">(</span><span class="s">&#34;/v2&#34;</span><span class="p">,</span> <span class="nx">middleware1</span><span class="p">)</span>
+   <span class="nx">v2</span><span class="p">.</span><span class="nf">POST</span><span class="p">(</span><span class="s">&#34;/login&#34;</span><span class="p">,</span> <span class="nx">loginEndpoint</span><span class="p">)</span>
+   <span class="nx">v2</span><span class="p">.</span><span class="nf">POST</span><span class="p">(</span><span class="s">&#34;/submit&#34;</span><span class="p">,</span> <span class="nx">submitEndpoint</span><span class="p">)</span>
+   <span class="nx">v2</span><span class="p">.</span><span class="nf">POST</span><span class="p">(</span><span class="s">&#34;/read&#34;</span><span class="p">,</span> <span class="nx">readEndpoint</span><span class="p">)</span>
+
+   <span class="nx">router</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// 省略的代码 ...
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="注">注⚠️</h2>
+<p>​	不同的中间件有不同的处理调用模式，所以会比较乱</p>
+<h2 id="参考">参考</h2>
+<p>​	https://www.yoytang.com/go-gin-doc.html</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">G+N</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-01-11
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/go/golang-ldflags/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Golang -ldflags</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/go/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/go%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8C%BA/">
+            <span class="next-text nav-default">go的工作区</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://nanblog.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>G+N</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
